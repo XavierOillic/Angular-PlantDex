@@ -1,4 +1,9 @@
 <div class="container">
+  <button (click)="displayDiv()">
+    Afficher la Div avec écrit Coucou dedans !
+  </button>
+  <div *ngIf="isDivDisplayed"><img src="/src/logo.png" /></div>
+
   <h1 class="title">Plantdex</h1>
   <div class="container-plants">
     <ul>

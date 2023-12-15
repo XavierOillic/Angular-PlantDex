@@ -8,9 +8,14 @@ import { PlantsService } from 'src/app/services/plants.service';
   styleUrls: ['./page-home.component.css']
 })
 export class PageHomeComponent implements OnInit {
+  isDivDisplayed = false;
   plantsToDisplay : Plant[] = []; // On initialise le tableau avec un tableau vide.
 
   constructor(private plantsService: PlantsService) {}
+
+  displayDiv (){
+     this.isDivDisplayed = !this.isDivDisplayed;
+  }
 
   ngOnInit(): void {
       this.plantsService.getLaPlants().subscribe((dataPLantJeChoisi) => {
