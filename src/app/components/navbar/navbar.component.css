@@ -1,1 +1,9 @@
+/* 
+.active {
+  color: green !important;
+}
+NE PAS METTRE !IMPORTANT */
 
+.navbar-nav .nav-link.active {
+  color: green;
+}
