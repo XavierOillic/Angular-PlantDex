@@ -1,13 +1,16 @@
 <div class="container">
-  <button (click)="displayDiv()">
-    Afficher la Div avec écrit Coucou dedans !
+  <button [title]="monTitle" (click)="displayDiv()">
+    Afficher la Div avec mon logo dedans !
   </button>
-  <div *ngIf="isDivDisplayed"><img src="/src/logo.png" /></div>
+  <div *ngIf="isDivDisplayed">
+    <img src="assets/logo.png" />
+  </div>
 
   <h1 class="title">Plantdex</h1>
   <div class="container-plants">
-    <ul>
-      <li *ngFor="let plant of plantsToDisplay">{{ plant.nom }}</li>
-    </ul>
+    <app-card-plant
+      *ngFor="let plantData of plantsToDisplay"
+      [plant]="plantData"
+    ></app-card-plant>
   </div>
 </div>
