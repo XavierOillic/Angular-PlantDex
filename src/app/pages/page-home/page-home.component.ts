@@ -15,7 +15,7 @@ export class PageHomeComponent implements OnInit {
   constructor(private plantsService: PlantsService) {}
 
   displayDiv (){
-     this.isDivDisplayed = !this.isDivDisplayed;
+     this.isDivDisplayed = !this.isDivDisplayed; // faire apparaitre et disparaitre la div noire sous le bandeau de nav
   }
 
   ngOnInit(): void {

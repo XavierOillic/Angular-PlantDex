@@ -42,6 +42,11 @@
         <li class="nav-item">
           <a class="nav-link disabled">A venir...</a>
         </li>
+        <li>
+          <app-search-bar
+            (myrtilleVersParent)="transmitSearch($event)"
+          ></app-search-bar>
+        </li>
       </ul>
     </div>
   </div>
