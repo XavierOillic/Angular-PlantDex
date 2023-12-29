@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { Plant } from 'src/app/models/plant';
 
 @Component({
   selector: 'app-search-bar',

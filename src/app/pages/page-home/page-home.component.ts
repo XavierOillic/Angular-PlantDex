@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Plant } from 'src/app/models/plant';
 import { PlantsService } from 'src/app/services/plants.service';
+import { SearchBarComponent } from 'src/app/components/search-bar/search-bar.component';
 
 @Component({
   selector: 'app-page-home',
@@ -9,6 +10,7 @@ import { PlantsService } from 'src/app/services/plants.service';
 })
 export class PageHomeComponent implements OnInit {
   isDivDisplayed = false;
+  
   plantsToDisplay : Plant[] = []; // On initialise le tableau avec un tableau vide.
   monTitle= "Test d'Affichage InfoBulle";
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SearchBarComponent } from '../search-bar/search-bar.component';
+import { Plant } from 'src/app/models/plant';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +8,11 @@ import { SearchBarComponent } from '../search-bar/search-bar.component';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  arrPlant = []; 
+  
   transmitSearch(receivedSearch: any){
     console.log(receivedSearch);
+
+  
   }
 }
