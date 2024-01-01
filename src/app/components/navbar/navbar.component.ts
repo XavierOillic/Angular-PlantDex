@@ -1,6 +1,4 @@
-import { Component } from '@angular/core';
-import { SearchBarComponent } from '../search-bar/search-bar.component';
-import { Plant } from 'src/app/models/plant';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -8,6 +6,17 @@ import { Plant } from 'src/app/models/plant';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+
+  @Output() myrtilleVersParent = new EventEmitter();
+
+  entrySearchPlant( framboiseEventDepuisHtml: any) {
+    this.myrtilleVersParent.emit(framboiseEventDepuisHtml.target.value);
+
+    //console.log(framboiseEventDepuisHtml.target.value); //==> FONCTIONNE.
+   }
+  }
+
+  /*
   arrPlant = []; 
   plantsToDisplay: any;
   
@@ -19,18 +28,8 @@ export class NavbarComponent {
     let tabFiltre: any | [];
     tabFiltre = this.plantsToDisplay;
 
-    this.plantsToDisplay = tabFiltre.filter((Plant: { first_name: string; }) => {
-      Plant.first_name.toLowerCase().includes(searchPlant);
+    this.plantsToDisplay = this.plantsToDisplay.filter((Plant: { name: string; }) => {
+      Plant.name.toLowerCase().includes(searchPlant);
     });
-  }
-
-       /*
-       let searchPlant: string;
-    //let searchPlant : RegExp = /[a-zA-Z]/i;
-    const filrPlant = this.plantsToDisplay.filter((arrPlant: { nom: string; }) =>{
-        return arrPlant.nom.toLowerCase().includes(searchPlant);
-    })
     */
 
-  }
-}

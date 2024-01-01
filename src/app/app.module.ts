@@ -11,7 +11,6 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 // A FAIRE POUR CHAQUE PROJET ANGULAR
 import {HttpClientModule} from '@angular/common/http';
 import { CardPlantComponent } from './components/card-plant/card-plant.component';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +21,6 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     PageMyPlantsComponent,
     PageNotFoundComponent,
     CardPlantComponent,
-    SearchBarComponent
   ],
   imports: [
     BrowserModule,

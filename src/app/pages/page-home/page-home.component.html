@@ -1,3 +1,6 @@
+<div>
+  <app-navbar (myrtilleVersParent)="transmitSearch($event)"> </app-navbar>
+</div>
 <div class="container">
   <button [title]="monTitle" (click)="displayDiv()">
     Afficher la Div avec mon logo dedans !
@@ -12,6 +15,5 @@
       *ngFor="let plantData of plantsToDisplay"
       [plant]="plantData"
     ></app-card-plant>
-    <app-navbar></app-navbar>
   </div>
 </div>
