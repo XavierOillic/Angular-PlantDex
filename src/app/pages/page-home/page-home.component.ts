@@ -10,10 +10,13 @@ import { SearchBarComponent } from 'src/app/components/search-bar/search-bar.com
 })
 export class PageHomeComponent implements OnInit {
   isDivDisplayed = false;
-  
+
   plantsToDisplay : Plant[] = []; // On initialise le tableau avec un tableau vide.
   monTitle= "Test d'Affichage InfoBulle";
 
+  arrPlant = [];
+  
+  
   constructor(private plantsService: PlantsService) {}
 
   displayDiv (){
@@ -26,6 +29,7 @@ export class PageHomeComponent implements OnInit {
       // LE SUBSCRIBE remplace le THEN ! et la partie avant le FETCH.
       this.plantsToDisplay = [...dataPLantJeChoisi];
     });
+ 
   }
 
 }

@@ -13,8 +13,6 @@ export class SearchBarComponent {
   entrySearchPlant( framboiseEventDepuisHtml: any) {
     this.myrtilleVersParent.emit(framboiseEventDepuisHtml.target.value);
     //console.log(framboiseEventDepuisHtml.target.value);
-   
-throw new Error('Method not implemented.');
-}
+   }
 
 }

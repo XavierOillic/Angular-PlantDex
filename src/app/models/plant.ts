@@ -1,4 +1,5 @@
 export interface Plant {
+    [x: string]: any;
     id : number;
     nom : string;
     soleil : string;
