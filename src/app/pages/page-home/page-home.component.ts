@@ -11,6 +11,7 @@ import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 export class PageHomeComponent implements OnInit {
 
   plantsToDisplay : Plant[] = []; // On initialise le tableau avec un tableau vide.
+  plantTampon : Plant[] = [];
   monTitle= "Test d'Affichage InfoBulle";
 
   arrPlant = [];
@@ -23,13 +24,12 @@ export class PageHomeComponent implements OnInit {
 
     let searchPlant: string = receivedSearchPlant;
 
-    let tabFiltre: any | [];
-    tabFiltre = this.plantsToDisplay;
-
-    this.plantsToDisplay = this.plantsToDisplay.filter((Plant) => {
-      Plant.nom.toLowerCase().includes(searchPlant);  
-    });
+    this.plantTampon = this.plantsToDisplay.filter((Plant) =>
+      Plant.nom.toLowerCase().includes(searchPlant) 
+    );
   }
+  //je met en place un tableau tampon pour ne pas toucher à mon tab originel et pour pouvoir toujours afficher un tableau complet.
+  //Dans le HTML, il me faux aussi modifier le NGFOR, pour qu'il boucle à chaque recherche dans tout la tabTAMPON.
   
 isDivDisplayed = false;
   displayDiv (){
@@ -41,7 +41,10 @@ isDivDisplayed = false;
       console.log(dataPLantJeChoisi); // Je stocke dans ce dataPlant les données de la BDD simulée.
       // LE SUBSCRIBE remplace le THEN ! et la partie avant le FETCH.
       this.plantsToDisplay = [...dataPLantJeChoisi];
+      this.plantTampon = [...dataPLantJeChoisi];
     });
+    // Le OnInit, stocke et affiche le contenu de la BDD dès le chargement de la page.
+    // Je charge et affiche le plantTampon, ET le plantsToDisplay.
  
   }
 

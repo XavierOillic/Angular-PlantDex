@@ -16,20 +16,4 @@ export class NavbarComponent {
    }
   }
 
-  /*
-  arrPlant = []; 
-  plantsToDisplay: any;
-  
-  transmitSearch(receivedSearch: any){
-    console.log(receivedSearch);
-
-    let searchPlant: string = receivedSearch;
-
-    let tabFiltre: any | [];
-    tabFiltre = this.plantsToDisplay;
-
-    this.plantsToDisplay = this.plantsToDisplay.filter((Plant: { name: string; }) => {
-      Plant.name.toLowerCase().includes(searchPlant);
-    });
-    */
 
