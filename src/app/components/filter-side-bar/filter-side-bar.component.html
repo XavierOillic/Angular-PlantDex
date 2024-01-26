@@ -1,0 +1,23 @@
+<div class="custom-side-bar border-end">
+  <div class="p-3">
+    <span class="fs-5 fw-semibold">Filtres</span>
+  </div>
+  <hr />
+  <div class="px-3">
+    <p class="fs-5 fw-semibold">Catégorie</p>
+    <!-- ETAPE DEUX ENFANT HTML Je fais la boucle.-->
+    <div class="form-check" *ngFor="let category of categoriesToDisplay">
+      <!-- Avec ce ngFor, je boucle avec CATEGORY sur categoriesToDisplay pour affcher autant de case à cocher que de catégories présentes dans le PlantsToDisplay  -->
+      <input
+        class="form-check-input"
+        type="checkbox"
+        value="{{ category }}"
+        id="{{ category }}"
+        (change)="onCheckedCategories($event)"
+      />
+      <label class="form-check-label" for="{{ category }}">
+        {{ category }}
+      </label>
+    </div>
+  </div>
+</div>

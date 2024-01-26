@@ -12,7 +12,7 @@ const routes: Routes = [
   {path:'my-plants', component:PageMyPlantsComponent},
   // Set Route for http://localhost:4200/admin ==> pâge my-plants
   {path:'admin', component:PageAdminComponent},
-  // Set Route for http://localhost:4200/page-not-found ==> page not found
+  // Set Route for http://localhost:4200/page-not-found ==> page not found, POSSIBLE grâce au WildCard **
    { path: '**', component: PageNotFoundComponent},
 ];
 

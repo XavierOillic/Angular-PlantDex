@@ -1,7 +1,4 @@
-<div>
-  <app-navbar (myrtilleVersParent)="transmitSearch($event)"> </app-navbar>
-</div>
-<div class="container">
+<div class="d-flex">
   <button [title]="monTitle" (click)="displayDiv()">
     Afficher la Div avec mon logo dedans !
   </button>
@@ -9,8 +6,12 @@
     <img src="assets/logo.png" />
   </div>
 
-  <h1 class="title">Plantdex</h1>
-  <div class="container-plants">
+  <app-filter-side-bar
+  
+    [categoriesToDisplay]="categoriesToSend"
+  ></app-filter-side-bar>
+  <!-- //====> ETAPE QUATRE : J'appelle -->
+  <div class="container-plants p-4">
     <app-card-plant
       *ngFor="let plantData of plantTampon"
       [plant]="plantData"
