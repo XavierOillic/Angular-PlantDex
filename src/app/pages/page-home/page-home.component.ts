@@ -14,6 +14,8 @@ export class PageHomeComponent implements OnInit {
 
   categoriesToSend: string[] = [];
 
+  tabTamponByFilter: Plant[] = [];
+
   monTitle = "Test d'Affichage InfoBulle";
 
   arrPlant = [];
@@ -22,8 +24,8 @@ export class PageHomeComponent implements OnInit {
   constructor(private plantsService: PlantsService) {}
 
   transmitSearch(receivedSearchPlant: any) {
-    console.log(receivedSearchPlant);
-    console.log(this.plantsToDisplay);
+    //console.log(receivedSearchPlant);
+    //console.log(this.plantsToDisplay);
 
     let searchPlant: string = receivedSearchPlant;
 
@@ -46,6 +48,8 @@ export class PageHomeComponent implements OnInit {
       this.plantsToDisplay = [...dataPLantJeChoisi]; // PROPRIETE
       this.plantTampon = [...dataPLantJeChoisi]; // PROPRIETE
 
+      this.tabTamponByFilter = [...dataPLantJeChoisi];
+
       this.categoriesToSend = this.getCategoriesFromPlants(dataPLantJeChoisi);
       //====> ETAPE TROIS Je stocke dans ce tableau déclaré vide au dessus MA METHODE, développé au dessous.
     });
@@ -67,5 +71,12 @@ export class PageHomeComponent implements OnInit {
     //console.log(tabSansdoublon);
 
     return tabSansdoublon;
+  }
+
+  filterPlantsByCategories(categories: string[]) {
+    this.plantsToDisplay = this.plantTampon.filter((x) =>
+      categories.includes(x.categorie)
+    );
+    console.log(`Je suis dans le parent  ==> ${categories}`);
   }
 }
