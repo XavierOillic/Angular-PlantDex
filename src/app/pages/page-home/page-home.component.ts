@@ -2,6 +2,8 @@ import { Component, OnInit, Output } from '@angular/core';
 import { Plant } from 'src/app/models/plant';
 import { PlantsService } from 'src/app/services/plants.service';
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
+import { __values } from 'tslib';
+import { isEmpty } from 'rxjs';
 
 @Component({
   selector: 'app-page-home',
@@ -19,6 +21,11 @@ export class PageHomeComponent implements OnInit {
   monTitle = "Test d'Affichage InfoBulle";
 
   arrPlant = [];
+
+  tabTempFiltrADeux: Plant[] = [];
+  tabTempFinal: Plant[] = [];
+  filtrCheckBox: string[] = [];
+  filtrText: string = '';
 
   // Ce PLantsService, UN SERVICE, peut être mis en place dans n'importe quel CONSTRUCTOR  Component TS si j'en ai besoin.
   constructor(private plantsService: PlantsService) {}
@@ -45,7 +52,6 @@ export class PageHomeComponent implements OnInit {
       console.log(dataPLantJeChoisi); // Je stocke dans ce dataPlant les données de la BDD simulée.
       // LE SUBSCRIBE remplace le THEN ! et la partie avant le FETCH.
       this.plantsToDisplay = [...dataPLantJeChoisi]; // PROPRIETE
-      this.plantTampon = [...dataPLantJeChoisi]; // PROPRIETE
 
       this.tabTamponByText = [...dataPLantJeChoisi]; // tableau temp filtre search bar.
 
@@ -73,16 +79,51 @@ export class PageHomeComponent implements OnInit {
   }
 
   filterPlantsByCategories(categories: string[]) {
-    this.plantsToDisplay = this.plantTampon.filter((x) =>
+    this.filtrCheckBox = categories;
+    this.FiltrADeux();
+    //console.log(`Je suis dans le parent  ==> ${categories}`);
+  }
+
+  filterPlantsByText(searchByText: string) {
+    this.filtrText = searchByText;
+    this.FiltrADeux();
+    //console.log('Parent = >', searchByText);
+  }
+
+  FiltrADeux(): Plant[] {
+    this.plantsToDisplay = [...this.tabTamponByText]; // PROPRIETE
+
+    if (this.filtrText !== '') {
+      this.plantsToDisplay = this.plantsToDisplay.filter((y) =>
+        y.nom.toLowerCase().includes(this.filtrText)
+      );
+      //console.log(this.plantTampon);
+    }
+    if (this.filtrCheckBox.length !== 0) {
+      this.plantsToDisplay = this.plantsToDisplay.filter((x) =>
+        this.filtrCheckBox.includes(x.categorie)
+      );
+      //console.log(this.tabTempFinal);
+    }
+    return this.tabTempFinal;
+  }
+}
+
+/*
+  filterPlantsByCategories(categories: string[]) {
+    this.filtrCheckBox = categories;
+    this.FiltrADeux();
+    /*this.plantsToDisplay = this.plantTampon.filter((x) =>
       categories.includes(x.categorie)
     );
     console.log(`Je suis dans le parent  ==> ${categories}`);
   }
 
-  filterPlantsByText(searchByText: any) {
+  filterPlantsByText(searchByText: string) {
+    this.filtrText = searchByText;
+    this.FiltrADeux();
     this.plantsToDisplay = this.tabTamponByText.filter((y) =>
       y.nom.toLowerCase().includes(searchByText)
-    );
-    console.log('Parent = >', searchByText);
-  }
-}
+    )
+
+  */
