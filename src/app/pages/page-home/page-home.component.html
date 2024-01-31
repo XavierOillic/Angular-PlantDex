@@ -23,7 +23,11 @@
     </div>
 
     <div>
-      <app-filter-buttons></app-filter-buttons>
+      <app-filter-buttons
+        (alphabetic_btn)="sortByAlphabetic($event)"
+        (sunny_btn)="sortBySunshine($event)"
+        (water_btn)="sortByWater($event)"
+      ></app-filter-buttons>
     </div>
 
     <div class="container-plants p-4">

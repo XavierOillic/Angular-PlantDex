@@ -91,21 +91,32 @@ export class PageHomeComponent implements OnInit {
   }
 
   FiltrADeux(): Plant[] {
-    this.plantsToDisplay = [...this.tabTamponByText]; // PROPRIETE
+    this.plantsToDisplay = [...this.tabTamponByText]; // A chaque appel de ma méhode mon tableau doit être plein.
 
     if (this.filtrText !== '') {
+      // Si la valeur de filtrText est l'opposé de 'rien' ==> !==
       this.plantsToDisplay = this.plantsToDisplay.filter((y) =>
         y.nom.toLowerCase().includes(this.filtrText)
       );
-      //console.log(this.plantTampon);
+      //console.log(this.plantTampon); Je filtre avec mon champ de texte. Le plantsToDisplay est celui qui est envoyé à l'enfant.
     }
     if (this.filtrCheckBox.length !== 0) {
       this.plantsToDisplay = this.plantsToDisplay.filter((x) =>
         this.filtrCheckBox.includes(x.categorie)
       );
-      //console.log(this.tabTempFinal);
+      //console.log(this.tabTempFinal); Je filtre à nouveau avec les checkbox.
     }
     return this.tabTempFinal;
+  }
+
+  sortByWater(byWaterNeed: any) {
+    console.log('Parent => ', byWaterNeed);
+  }
+  sortBySunshine(bySunshineNeed: any) {
+    console.log('Parent => ', bySunshineNeed);
+  }
+  sortByAlphabetic(byAlphabetic: any) {
+    console.log('Parent => ', byAlphabetic);
   }
 }
 

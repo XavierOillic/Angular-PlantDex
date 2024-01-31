@@ -7,4 +7,5 @@
 }
 input::placeholder {
   color: rgb(17, 18, 17);
+  padding-left: 20%;
 }

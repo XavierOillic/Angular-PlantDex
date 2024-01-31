@@ -1,8 +1,15 @@
 .btns-filter-design {
   display: flex;
-  margin-top: 5%;
+  margin-top: 3%;
   margin-left: 2%;
+  margin-right: 2%;
+  padding-left: 10%;
+  background-color: rgb(130, 176, 75);
 }
 .btns-input {
   display: flex;
+  width: 100%;
+}
+input {
+  height: 120%;
 }
