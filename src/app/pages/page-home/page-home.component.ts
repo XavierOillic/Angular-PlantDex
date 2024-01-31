@@ -14,7 +14,7 @@ export class PageHomeComponent implements OnInit {
 
   categoriesToSend: string[] = [];
 
-  tabTamponByFilter: Plant[] = [];
+  tabTamponByText: Plant[] = []; // Tableau
 
   monTitle = "Test d'Affichage InfoBulle";
 
@@ -24,9 +24,6 @@ export class PageHomeComponent implements OnInit {
   constructor(private plantsService: PlantsService) {}
 
   transmitSearch(receivedSearchPlant: any) {
-    //console.log(receivedSearchPlant);
-    //console.log(this.plantsToDisplay);
-
     let searchPlant: string = receivedSearchPlant;
 
     this.plantTampon = this.plantsToDisplay.filter((Plant) =>
@@ -36,10 +33,12 @@ export class PageHomeComponent implements OnInit {
   //je met en place un tableau tampon pour ne pas toucher à mon tab originel et pour pouvoir toujours afficher un tableau complet.
   //Dans le HTML, il me faux aussi modifier le NGFOR, pour qu'il boucle à chaque recherche dans tout la tabTAMPON.
 
+  /*
   isDivDisplayed = false;
   displayDiv() {
     this.isDivDisplayed = !this.isDivDisplayed; // faire apparaitre et disparaitre la div noire sous le bandeau de nav
   }
+  */
 
   ngOnInit(): void {
     this.plantsService.getLaPlants().subscribe((dataPLantJeChoisi) => {
@@ -48,7 +47,7 @@ export class PageHomeComponent implements OnInit {
       this.plantsToDisplay = [...dataPLantJeChoisi]; // PROPRIETE
       this.plantTampon = [...dataPLantJeChoisi]; // PROPRIETE
 
-      this.tabTamponByFilter = [...dataPLantJeChoisi];
+      this.tabTamponByText = [...dataPLantJeChoisi]; // tableau temp filtre search bar.
 
       this.categoriesToSend = this.getCategoriesFromPlants(dataPLantJeChoisi);
       //====> ETAPE TROIS Je stocke dans ce tableau déclaré vide au dessus MA METHODE, développé au dessous.
@@ -78,5 +77,12 @@ export class PageHomeComponent implements OnInit {
       categories.includes(x.categorie)
     );
     console.log(`Je suis dans le parent  ==> ${categories}`);
+  }
+
+  filterPlantsByText(searchByText: any) {
+    this.plantsToDisplay = this.tabTamponByText.filter((y) =>
+      y.nom.toLowerCase().includes(searchByText)
+    );
+    console.log('Parent = >', searchByText);
   }
 }

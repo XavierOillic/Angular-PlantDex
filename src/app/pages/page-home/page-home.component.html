@@ -1,21 +1,37 @@
 <div class="d-flex">
-  <button [title]="monTitle" (click)="displayDiv()">
+  <!--
+    <button [title]="monTitle" (click)="displayDiv()">
     Afficher la Div avec mon logo dedans !
   </button>
   <div *ngIf="isDivDisplayed">
     <img src="assets/logo.png" />
   </div>
+-->
+  <div>
+    <app-filter-side-bar
+      [categoriesToDisplay]="categoriesToSend"
+      (categoriesToFilter)="filterPlantsByCategories($event)"
+    ></app-filter-side-bar>
+    <!-- //====> ETAPE QUATRE : J'appelle -->
+  </div>
+  <div>
+    <div>
+      <app-search-bar
+        (myrtilleVersParent)="filterPlantsByText($event)"
+        class="searchDesign"
+      ></app-search-bar>
+    </div>
 
-  <app-filter-side-bar
-    [categoriesToDisplay]="categoriesToSend"
-    (categoriesToFilter)="filterPlantsByCategories($event)"
-  ></app-filter-side-bar>
-  <!-- //====> ETAPE QUATRE : J'appelle -->
-  <div class="container-plants p-4">
-    <app-card-plant
-      *ngFor="let plantData of plantsToDisplay"
-      [plant]="plantData"
-    ></app-card-plant>
-    <!-- Je Boucle FOR sur le TABTAMPON pour ne pas toucher au tableau originel-->
+    <div>
+      <app-filter-buttons></app-filter-buttons>
+    </div>
+
+    <div class="container-plants p-4">
+      <app-card-plant
+        *ngFor="let plantData of plantsToDisplay"
+        [plant]="plantData"
+      ></app-card-plant>
+      <!-- Je Boucle FOR sur le TABTAMPON pour ne pas toucher au tableau originel-->
+    </div>
   </div>
 </div>

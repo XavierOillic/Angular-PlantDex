@@ -11,4 +11,14 @@ button {
   display: flex;
   flex-wrap: wrap; /* revient à la ligne quand la ligne depasse une certaine longueur*/
   gap: 2rem;
+  justify-content: space-between;
+  margin-top: 3%;
+}
+.searchDesign {
+  background-color: rgb(117, 122, 115);
+  display: flex;
+  margin-top: 2%;
+  margin-right: 2%;
+  margin-left: 2%;
+  height: 30px;
 }

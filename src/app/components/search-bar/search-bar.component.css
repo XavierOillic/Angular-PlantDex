@@ -1,0 +1,10 @@
+.inputDesign {
+  background-color: rgb(86, 122, 42);
+  color: rgb(244, 247, 242);
+  height: 150%;
+  width: 100%;
+  border-radius: 5px;
+}
+input::placeholder {
+  color: rgb(17, 18, 17);
+}

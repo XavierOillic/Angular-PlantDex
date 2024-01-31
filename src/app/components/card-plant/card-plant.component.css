@@ -1,1 +1,4 @@
-
+#cardDesign {
+  border: solid 5px rgb(86, 122, 42);
+  border-radius: 10px;
+}
