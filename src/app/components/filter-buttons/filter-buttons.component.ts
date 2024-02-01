@@ -10,16 +10,21 @@ export class FilterButtonsComponent {
   @Output() water_btn = new EventEmitter();
   @Output() sunny_btn = new EventEmitter();
 
-  btn_soleil(sunshine: Event) {
-    this.alphabetic_btn.emit(sunshine);
-    //console.log('Enfant => ', sunshine);
+  btn_alphabetic(alphabetic: Event) {
+    const target = alphabetic.target as HTMLInputElement;
+    this.alphabetic_btn.emit(target.value);
+    //console.log('Enfant => ', alphabetic);
   }
+
   btn_arrosage(water: Event) {
-    this.water_btn.emit(water);
+    const target = water.target as HTMLInputElement;
+    this.water_btn.emit(target.value);
     //console.log('Enfant => ', water);
   }
-  btn_alphabetic(alphabetic: Event) {
-    this.alphabetic_btn.emit(alphabetic);
-    //console.log('Enfant => ', alphabetic);
+
+  btn_soleil(sunshine: Event) {
+    const target = sunshine.target as HTMLInputElement;
+    this.sunny_btn.emit(target.value);
+    //console.log('Enfant => ', sunshine);
   }
 }
