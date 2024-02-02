@@ -6,10 +6,10 @@
   padding-left: 10%;
   background-color: rgb(130, 176, 75);
 }
-.btns-input {
+.div-btns {
   display: flex;
   width: 100%;
 }
-input {
-  height: 120%;
+button {
+  background-color: rgb(117, 163, 61);
 }
