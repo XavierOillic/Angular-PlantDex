@@ -14,6 +14,7 @@ import { CardPlantComponent } from './components/card-plant/card-plant.component
 import { FilterSideBarComponent } from './components/filter-side-bar/filter-side-bar.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { FilterButtonsComponent } from './components/filter-buttons/filter-buttons.component';
+import { IconesComponent } from './components/icones/icones.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FilterButtonsComponent } from './components/filter-buttons/filter-butto
     FilterSideBarComponent,
     SearchBarComponent,
     FilterButtonsComponent,
+    IconesComponent,
   ],
   imports: [
     BrowserModule,

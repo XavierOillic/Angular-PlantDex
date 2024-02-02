@@ -1,4 +1,4 @@
-<div class="card" style="width: 18rem" id="cardDesign">
+<div class="card" id="cardDesign">
   <img [src]="plant.image" class="card-img-top" [alt]="plant.nom" />
   <div class="card-body">
     <h5 class="card-title text-truncate" [title]="plant.nom">
@@ -7,6 +7,7 @@
     <p class="card-text">
       {{ plant.categorie }}
     </p>
-    <a href="#" class="btn btn-success">NiaNiania</a>
+    <app-icones></app-icones>
+    <a href="#" class="btn btn-success">I 'd like to <br />have this one.</a>
   </div>
 </div>

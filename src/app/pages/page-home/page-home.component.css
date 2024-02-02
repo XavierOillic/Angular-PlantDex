@@ -10,15 +10,28 @@ button {
 .container-plants {
   display: flex;
   flex-wrap: wrap; /* revient à la ligne quand la ligne depasse une certaine longueur*/
-  gap: 2rem;
-  justify-content: space-between;
+  /*gap: 2rem;*/
+  justify-content: space-around;
   margin-top: 3%;
+  padding: 1.5rem; /* p-4 Bootstrap*/
+  padding-top: 0;
 }
 .searchDesign {
   background-color: rgb(117, 122, 115);
   display: flex;
+  justify-content: space-around;
   margin-top: 2%;
   margin-right: 2%;
   margin-left: 2%;
   height: 30px;
+}
+.one-plant {
+  width: 31%;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1200px) {
+  .one-plant {
+    width: 30%;
+  }
 }

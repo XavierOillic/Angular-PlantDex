@@ -1,15 +1,22 @@
 .btns-filter-design {
   display: flex;
+  justify-content: space-evenly;
   margin-top: 3%;
   margin-left: 2%;
   margin-right: 2%;
-  padding-left: 10%;
-  background-color: rgb(130, 176, 75);
+  padding-left: 11%;
+  background-color: rgb(210, 210, 210);
+  height: 3rem;
 }
 .div-btns {
   display: flex;
   width: 100%;
 }
+.div-reset {
+  display: flex;
+}
 button {
-  background-color: rgb(117, 163, 61);
+  /*background-color: rgb(117, 163, 61);*/
+  border: solid 1px rgb(215, 213, 213);
+  margin: 2%;
 }

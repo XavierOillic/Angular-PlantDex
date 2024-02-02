@@ -2,18 +2,26 @@
   <div class="div-btns">
     <button
       class="btn"
-      type="checkbox"
       id="alphabetic"
       value="alphabetic"
       (click)="btn_alphabetic($event)"
     >
       Alphabetic
     </button>
+    <div class="div-reset">
+      <button
+        class="btn"
+        id="alphabetic"
+        value="alphabetic"
+        (click)="resetAlpha($event)"
+      >
+        <i class="bi bi-arrow-counterclockwise"></i>
+      </button>
+    </div>
   </div>
   <div class="div-btns">
     <button
       class="btn"
-      type="checkbox"
       id="arrosage"
       value="arrosage"
       (click)="btn_arrosage($event)"
@@ -22,13 +30,7 @@
     </button>
   </div>
   <div class="div-btns">
-    <button
-      class="btn"
-      type="checkbox"
-      id="soleil"
-      value="soleil"
-      (click)="btn_soleil($event)"
-    >
+    <button class="btn" id="soleil" value="soleil" (click)="btn_soleil($event)">
       ☀️ Sunshine ☀️
     </button>
   </div>

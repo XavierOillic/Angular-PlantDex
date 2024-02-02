@@ -8,8 +8,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class SearchBarComponent {
   @Output() myrtilleVersParent = new EventEmitter();
 
-  entrySearchPlant(framboiseEventDepuisHtml: any) {
-    this.myrtilleVersParent.emit(framboiseEventDepuisHtml.target.value);
+  entrySearchPlant(framboiseEventDepuisHtml: Event) {
+    const target = framboiseEventDepuisHtml.target as HTMLInputElement;
+    this.myrtilleVersParent.emit(target.value);
 
     //console.log('ENFANT TS', framboiseEventDepuisHtml.target.value);
   }

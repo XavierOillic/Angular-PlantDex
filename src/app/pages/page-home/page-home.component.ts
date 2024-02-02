@@ -22,7 +22,8 @@ export class PageHomeComponent implements OnInit {
 
   arrPlant = [];
 
-  tabTempFiltrADeux: Plant[] = [];
+  tabPlantFiltrAlpha: Plant[] = [];
+
   tabTempFinal: Plant[] = [];
   filtrCheckBox: string[] = [];
   filtrText: string = '';
@@ -116,7 +117,23 @@ export class PageHomeComponent implements OnInit {
     console.log('Parent => ', bySunshineNeed);
   }
   sortByAlphabetic(byAlphabetic: any) {
-    console.log('Parent => ', byAlphabetic);
+    this.tabPlantFiltrAlpha = [...this.plantsToDisplay];
+
+    this.tabPlantFiltrAlpha.sort(function (a, b) {
+      if (a.nom < b.nom) {
+        return -1;
+      }
+      if (a.nom > b.nom) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+    this.plantsToDisplay = [...this.tabPlantFiltrAlpha];
+    console.log('Parent => ', this.tabPlantFiltrAlpha);
+  }
+  resetAlpha(back: string) {
+    this.tabPlantFiltrAlpha = [...this.plantsToDisplay];
   }
 }
 

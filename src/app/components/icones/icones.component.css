@@ -1,0 +1,20 @@
+.align-icon {
+  display: flex;
+}
+.design-Water-Sun {
+  /*background-color: rgb(228, 229, 228);*/
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 2%;
+  padding: 4%;
+}
+.y-color {
+  color: rgb(253, 213, 15);
+}
+.b-color {
+  color: rgb(51, 10, 232);
+}
+.size {
+  size: 5rem;
+}

@@ -14,6 +14,7 @@
     ></app-filter-side-bar>
     <!-- //====> ETAPE QUATRE : J'appelle -->
   </div>
+
   <div>
     <div>
       <app-search-bar
@@ -25,13 +26,15 @@
     <div>
       <app-filter-buttons
         (alphabetic_btn)="sortByAlphabetic($event)"
+        (reset_btn)="resetAlpha($event)"
         (sunny_btn)="sortBySunshine($event)"
         (water_btn)="sortByWater($event)"
       ></app-filter-buttons>
     </div>
 
-    <div class="container-plants p-4">
+    <div class="container-plants">
       <app-card-plant
+        class="one-plant"
         *ngFor="let plantData of plantsToDisplay"
         [plant]="plantData"
       ></app-card-plant>
