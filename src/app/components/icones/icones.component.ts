@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input } from '@angular/core';
-//import url from "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css";
+import { Component, Input } from '@angular/core';
+import { Plant } from 'src/app/models/plant';
 
 @Component({
   selector: 'app-icones',
@@ -7,7 +7,8 @@ import { Component, EventEmitter, Input } from '@angular/core';
   styleUrls: ['./icones.component.css'],
 })
 export class IconesComponent {
-  @Input() icon!: string;
+  @Input() icons!: string;
+  @Input() planttest!: Plant;
 
   /*
    * TODO @Input to set icon name

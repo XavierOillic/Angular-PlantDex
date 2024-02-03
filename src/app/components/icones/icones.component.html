@@ -1,29 +1,31 @@
 <div class="design-Water-Sun">
   <div class="sun-icon-design">
-    <div><p>Watering</p></div>
+    <div><h6 class="icon-title">Watering</h6></div>
     <div class="align-icon b-color">
       <div>
-        <i class="bi bi-brightness-high"></i>
+        <i class="very-sunny" [title]="'bi bi-brightness-high'">{{ icons }}</i>
       </div>
       <div>
-        <i class="bi bi-brightness-high"></i>
+        <i class="" [title]="'bi bi-brightness-high'">{{ icons }}</i>
       </div>
       <div>
-        <i class="bi bi-brightness-high-fill"></i>
+        <i class="less-sunny" [title]="'bi bi-brightness-high-fill'">{{
+          icons
+        }}</i>
       </div>
     </div>
   </div>
   <div class="drop-icon-design">
-    <div><p>Sunshine</p></div>
+    <div><h6 class="icon-title">Sunshine</h6></div>
     <div class="align-icon y-color">
       <div>
-        <i class="bi bi-droplet"></i>
+        <i class="less-water" [title]="'bi bi-droplet'">{{ icons }}</i>
       </div>
       <div>
-        <i class="bi bi-droplet-half"></i>
+        <i class="big-water" [title]="'bi bi-droplet-fill'">{{ icons }}</i>
       </div>
       <div>
-        <i class="bi bi-droplet-fill"></i>
+        <i class="" [title]="'bi bi-droplet-fill'">{{ icons }}</i>
       </div>
     </div>
   </div>
