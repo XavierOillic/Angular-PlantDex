@@ -15,6 +15,7 @@ import { FilterSideBarComponent } from './components/filter-side-bar/filter-side
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { FilterButtonsComponent } from './components/filter-buttons/filter-buttons.component';
 import { IconesComponent } from './components/icones/icones.component';
+import { LegendComponent } from './components/legend/legend.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { IconesComponent } from './components/icones/icones.component';
     SearchBarComponent,
     FilterButtonsComponent,
     IconesComponent,
+    LegendComponent,
   ],
   imports: [
     BrowserModule,
