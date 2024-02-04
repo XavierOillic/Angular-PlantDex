@@ -7,7 +7,16 @@ import { Plant } from 'src/app/models/plant';
   styleUrls: ['./icones.component.css'],
 })
 export class IconesComponent {
-  @Input() icons!: string;
+  @Input() icons: string = '';
+
+  /*
+  @Input() droplet: string = '';
+  @Input() dropletFill: string = '';
+  @Input() sunny: string = '';
+  @Input() sunnyFill: string = '';
+  */
+
+  @Input() message: string = '';
 
   /*
    * TODO @Input to set icon name
