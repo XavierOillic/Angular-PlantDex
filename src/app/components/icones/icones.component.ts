@@ -8,7 +8,6 @@ import { Plant } from 'src/app/models/plant';
 })
 export class IconesComponent {
   @Input() icons!: string;
-  @Input() planttest!: Plant;
 
   /*
    * TODO @Input to set icon name

@@ -8,6 +8,4 @@ import { Plant } from 'src/app/models/plant';
 })
 export class CardPlantComponent {
   @Input() plant!: Plant;
-
-  iconName: string = '';
 }
