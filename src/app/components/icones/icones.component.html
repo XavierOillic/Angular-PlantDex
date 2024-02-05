@@ -1,11 +1,52 @@
 <div class="design-Water-Sun">
   <div class="sun-icon-design">
+    <div class="align-icon b-color">
+      <tr>
+        <span class="bi bi-droplet-fill">{{ waterIcons }}</span>
+        <span class="bi bi-droplet-fill">{{ waterIcons }}</span>
+        <span class="bi bi-droplet-fill">{{ waterIcons }}</span>
+      </tr>
+    </div>
+  </div>
+  <div class="drop-icon-design">
+    <div class="align-icon y-color">
+      <tr>
+        <td>
+          <!--<h6>Message venu du parent : {{ message }}</h6>-->
+        </td>
+        <span class="bi bi-brightness-high-fill">{{ sunshineIcons }}</span>
+        <span class="bi bi-brightness-high-fill">{{ sunshineIcons }}</span>
+        <span class="bi bi-brightness-high-fill">{{ sunshineIcons }}</span>
+      </tr>
+    </div>
+  </div>
+</div>
+
+<!--
+<TBODY>NGIF ="PLANT.ARROSAGE.LENGTH >= 1"
+  <TR> NGFOR ="LET X OF PLANT"
+    <TD> {{  X.ARROSAGE}}
+
+       <tbody *ngIf="plant.arrosage == 0">
+          <tr *ngFor="let x of plant">
+            <td>
+              {{ sunshineIcons }}
+              <h6>Message venu du parent : {{ message }}</h6>
+            </td>
+          </tr>
+        </tbody>
+
+
+<div class="design-Water-Sun">
+  <div class="sun-icon-design">
     <div>
-      <h6 class="icon-title">Watering</h6>
+    <h6 class="icon-title">Watering</h6>
     </div>
     <div class="align-icon b-color">
       <tr>
-        <td>{{ icons }} {{ icons }}{{ icons }}</td>
+        <td><i class="bi bi-droplet-fill"></i></td>
+        <td><i class="bi bi-droplet-fill"></i></td>
+        <td><i class="bi bi-droplet"></i></td>
       </tr>
     </div>
   </div>
@@ -14,53 +55,14 @@
     <div class="align-icon y-color">
       <tr>
         <td>
-          <!--<h6>Message venu du parent : {{ message }}</h6>-->
+      <h6>Message venu du parent : {{ message }}</h6>
         </td>
+        <td><i class="bi bi-brightness-high-fill"></i></td>
+        <td><i class="bi bi-brightness-high-fill"></i></td>
+        <td><i class="bi bi-brightness-high"></i></td>
         <td>{{ icons }} {{ icons }}{{ icons }}</td>
       </tr>
     </div>
   </div>
 </div>
-
-<!--
-
-NGIF s'il n'y a pas besoin d'O , alors tu met 3 sans fill, 
-NGFOR 3 avec O
-NG IF s'il y a besoin d'O , alors tu mets 
-
-
-<div class="design-Water-Sun">
-  <div class="sun-icon-design">
-    <div><h6 class="icon-title">Watering</h6></div>
-    <div class="align-icon b-color">
-      <div>
-        <i class="very-sunny" [title]="'bi bi-brightness-high'">{{ icons }}</i>
-      </div>
-      <div>
-        <i class="" [title]="'bi bi-brightness-high'">{{ icons }}</i>
-      </div>
-      <div>
-        <i class="less-sunny" [title]="'bi bi-brightness-high-fill'">{{
-          icons
-        }}</i>
-      </div>
-    </div>
-  </div>
-  <div class="drop-icon-design">
-    <div><h6 class="icon-title">Sunshine</h6></div>
-    <div class="align-icon y-color">
-      <div>
-        <i class="less-water" [title]="'bi bi-droplet'">{{ icons }}</i>
-      </div>
-      <div>
-        <i class="big-water" [title]="'bi bi-droplet-fill'">{{ icons }}</i>
-      </div>
-      <div>
-        <i class="" [title]="'bi bi-droplet-fill'">{{ icons }}</i>
-      </div>
-    </div>
-  </div>
-</div>
-
-
 -->

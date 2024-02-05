@@ -9,17 +9,13 @@ import { Plant } from 'src/app/models/plant';
 export class CardPlantComponent {
   @Input() plant!: Plant;
 
-  iconBootstrap: string = ' AZ ';
-
-  //iconDropFill: string = 'B';
-  //iconSun: string = 'C';
-  //iconSunFill: string = 'D';
+  iconBootstrap!: string;
 
   //monMessage: string = 'Salut les terriens !';
 }
 
 /*
-iconDrop: string = 'bi bi-droplet';
+iconDrop: string = '<i class="bi bi-droplet"></i>;
   iconDropFill: string = '<i class="bi bi-droplet-fill"></i>';
   iconSun: string = '<i class="bi bi-brightness-high"></i>';
   iconSunFill: string = '<i class="bi bi-brightness-high-fill"></i>'

@@ -7,15 +7,30 @@
     <p class="card-text">
       {{ plant.categorie }}
     </p>
-    <div class="plants-needs">
-      <app-icones [icons]="iconBootstrap"></app-icones>
-      <!--<app-icones [dropletFill]="iconDropFill"></app-icones>-->
-      <!--<app-icones [sunny]="iconSun"></app-icones>-->
-      <!--<app-icones [sunnyFill]="iconSunFill"></app-icones>-->
-
-      <!--<app-icones [message]="monMessage"></app-icones>-->
+    <div>
+      <div>
+        <div class="i-design">
+          <h6>
+            Watering :
+            {{ plant.arrosage }}
+          </h6>
+          <h6>
+            Sunshine : <br />
+            {{ plant.soleil }}
+          </h6>
+        </div>
+        <div>
+          <app-icones
+            >[waterIcons]="plant.arrosage" [sunshineIcons]="plant.soleil"
+          </app-icones>
+        </div>
+      </div>
+      <div></div>
     </div>
 
     <a href="#" class="btn btn-success">I 'd like to <br />have this one.</a>
   </div>
 </div>
+
+<!--<span><app-icones [icons]="iconBootstrap"></app-icones></span>-->
+<!--<app-icones [message]="monMessage"></app-icones>-->

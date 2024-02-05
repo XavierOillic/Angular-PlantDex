@@ -7,16 +7,25 @@ import { Plant } from 'src/app/models/plant';
   styleUrls: ['./icones.component.css'],
 })
 export class IconesComponent {
-  @Input() icons: string = '';
+  @Input() icons!: string;
+  @Input() plant!: Plant;
+
+  @Input() sunshineIcons!: string;
+  @Input() waterIcons!: string;
+
+  //@Input() message: string = '';
 
   /*
-  @Input() droplet: string = '';
-  @Input() dropletFill: string = '';
-  @Input() sunny: string = '';
-  @Input() sunnyFill: string = '';
+  sunnyIconsDisplay() {}
+  waterIconDisplay() {
+    if (this.plant.arrosage == 2 || this.plant.arrosage == 4) {
+      this.waterIcons;
+    } else {
+      this.waterIcons;
+    }
+    return this.waterIcons;
+  }
   */
-
-  @Input() message: string = '';
 
   /*
    * TODO @Input to set icon name

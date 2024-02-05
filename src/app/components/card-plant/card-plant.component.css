@@ -5,3 +5,7 @@
 img {
   max-height: 75%;
 }
+.i-design {
+  display: flex;
+  justify-content: space-between;
+}
