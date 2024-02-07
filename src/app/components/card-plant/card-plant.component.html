@@ -20,9 +20,13 @@
           </h6>
         </div>
         <div>
-          <app-icones
+          <!--<app-icones
             >[waterIcons]="plant.arrosage" [sunshineIcons]="plant.soleil"
-          </app-icones>
+          </app-icones>-->
+          <app-icones
+            [waterIcons]="iconForWaterP"
+            [sunshineIcons]="iconForSun"
+          ></app-icones>
         </div>
       </div>
       <div></div>
@@ -33,4 +37,9 @@
 </div>
 
 <!--<span><app-icones [icons]="iconBootstrap"></app-icones></span>-->
-<!--<app-icones [message]="monMessage"></app-icones>-->
+<!--<app-icones [message]="monMessage"></app-icones>
+ <app-icones
+            [waterIcons]="iconForWaterFill"
+            [sunshineIcons]="iconForSunFill"
+          ></app-icones>
+-->

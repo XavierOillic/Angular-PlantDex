@@ -32,7 +32,7 @@ export class FilterSideBarComponent {
       }
       this.checkedCategories.push(target.value);
       //console.log(`Cochée : ${this.checkedCategories}`);
-      //=========> Lorsqu'un USER coche une checkbo* ==> On l'ajoute à un tableau de catégorie cochée
+      //=========> Lorsqu'un USER coche une checkbox* ==> On l'ajoute à un tableau de catégorie cochée
     } else {
       this.checkedCategories = this.checkedCategories.filter(
         (categorie) => categorie !== target.value

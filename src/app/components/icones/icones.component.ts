@@ -10,22 +10,10 @@ export class IconesComponent {
   @Input() icons!: string;
   @Input() plant!: Plant;
 
-  @Input() sunshineIcons!: string;
-  @Input() waterIcons!: string;
+  @Input() sunshineIcons: string = '';
+  @Input() waterIcons: string = '';
 
   //@Input() message: string = '';
-
-  /*
-  sunnyIconsDisplay() {}
-  waterIconDisplay() {
-    if (this.plant.arrosage == 2 || this.plant.arrosage == 4) {
-      this.waterIcons;
-    } else {
-      this.waterIcons;
-    }
-    return this.waterIcons;
-  }
-  */
 
   /*
    * TODO @Input to set icon name

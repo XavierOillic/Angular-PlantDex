@@ -11,6 +11,32 @@ export class CardPlantComponent {
 
   iconBootstrap!: string;
 
+  iconForWaterP: string = 'bi bi-droplet'; // C'est grace à cette ligne que j'affiche.
+  iconForWaterFillP: string = 'bi bi-droplet-fill';
+  iconForSun: string = 'bi bi-brightness-high';
+  iconForSunFill: string = 'bi bi-brightness-high-fill';
+
+  waterNeedsDisplay() {
+    if (this.plant.arrosage == 2) {
+      this.iconForWaterFillP + this.iconForWaterFillP;
+    } else if (this.plant.arrosage == 3) {
+      this.iconForWaterFillP + this.iconForWaterFillP + this.iconForWaterFillP;
+    } else {
+      this.iconForWaterP + this.iconForWaterP + this.iconForWaterP;
+      console.log('Display test => ', this.iconForWaterP);
+    }
+  }
+  sunNeedsDisplay() {
+    if (this.plant.soleil == 'moyen') {
+      this.iconForSunFill + this.iconForSunFill;
+    } else if (this.plant.soleil == 'beaucoup') {
+      this.iconForSunFill + this.iconForSunFill + this.iconForSunFill;
+    } else {
+      this.iconForSun + this.iconForSun + this.iconForSun;
+      console.log('Display test => ', this.iconForSun);
+    }
+  }
+
   //monMessage: string = 'Salut les terriens !';
 }
 
