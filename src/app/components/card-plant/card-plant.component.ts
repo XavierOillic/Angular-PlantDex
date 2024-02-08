@@ -9,27 +9,25 @@ import { Plant } from 'src/app/models/plant';
 export class CardPlantComponent {
   @Input() plant!: Plant;
 
-  iconBootstrap!: string;
+  iconName: string = '';
 
-  iconForWaterP: string = 'bi bi-droplet'; // C'est grace à cette ligne que j'affiche.
-  iconForWaterFillP: string = 'bi bi-droplet-fill';
-  iconForSun: string = 'bi bi-brightness-high';
-  iconForSunFill: string = 'bi bi-brightness-high-fill';
+  iconForWater: string = 'bi bi-droplet'; // C'est grace à cette ligne que j'affiche.
+  iconForWaterFill: string = '';
+  iconForSun: string = '';
+  iconForSunFill: string = '';
 
   waterNeedsDisplay() {
-    if (this.plant.arrosage == 2) {
-      this.iconForWaterFillP + this.iconForWaterFillP;
-    } else if (this.plant.arrosage == 3) {
-      this.iconForWaterFillP + this.iconForWaterFillP + this.iconForWaterFillP;
+    //this.iconForWater = 'bi bi-droplet';
+    if (this.plant.arrosage === 2) {
+      this.iconForWaterFill = 'bi bi-droplet-fill';
     } else {
-      this.iconForWaterP + this.iconForWaterP + this.iconForWaterP;
-      console.log('Display test => ', this.iconForWaterP);
+      this.iconForWaterFill = 'bi bi-droplet-fill';
     }
   }
   sunNeedsDisplay() {
-    if (this.plant.soleil == 'moyen') {
+    if (this.plant.soleil === 'moyen') {
       this.iconForSunFill + this.iconForSunFill;
-    } else if (this.plant.soleil == 'beaucoup') {
+    } else if (this.plant.soleil === 'beaucoup') {
       this.iconForSunFill + this.iconForSunFill + this.iconForSunFill;
     } else {
       this.iconForSun + this.iconForSun + this.iconForSun;
@@ -41,8 +39,8 @@ export class CardPlantComponent {
 }
 
 /*
-iconDrop: string = '<i class="bi bi-droplet"></i>;
-  iconDropFill: string = '<i class="bi bi-droplet-fill"></i>';
-  iconSun: string = '<i class="bi bi-brightness-high"></i>';
-  iconSunFill: string = '<i class="bi bi-brightness-high-fill"></i>'
+iconForWaterP: string = 'bi bi-droplet'; // C'est grace à cette ligne que j'affiche.
+  iconForWaterFillP: string = 'bi bi-droplet-fill';
+  iconForSun: string = 'bi bi-brightness-high';
+  iconForSunFill: string = 'bi bi-brightness-high-fill';
 */

@@ -135,6 +135,8 @@ export class PageHomeComponent implements OnInit {
   resetAlpha(back: string) {
     this.tabPlantFiltrAlpha = [...this.plantsToDisplay];
   }
+
+  iconNameTest:string = ''
 }
 
 /*

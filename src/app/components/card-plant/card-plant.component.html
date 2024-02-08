@@ -22,11 +22,12 @@
         <div>
           <!--<app-icones
             >[waterIcons]="plant.arrosage" [sunshineIcons]="plant.soleil"
-          </app-icones>-->
-          <app-icones
             [waterIcons]="iconForWaterP"
             [sunshineIcons]="iconForSun"
-          ></app-icones>
+          </app-icones>-->
+          <app-icones [waterIcons]="iconForWater" [sunshineIcons]="iconForSun">
+            {{ waterNeedsDisplay() }}</app-icones
+          >
         </div>
       </div>
       <div></div>

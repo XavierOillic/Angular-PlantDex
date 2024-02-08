@@ -7,26 +7,12 @@ import { Plant } from 'src/app/models/plant';
   styleUrls: ['./icones.component.css'],
 })
 export class IconesComponent {
-  @Input() icons!: string;
-  @Input() plant!: Plant;
-
   @Input() sunshineIcons: string = '';
   @Input() waterIcons: string = '';
 
-  //@Input() message: string = '';
+  // JE STOCKE DANS UNE PROPRIÉTÉ LA VALEUR DE L'INPUT. QUE J'INITIALISE A RIEN.
+  // ET JE LES ENVOIE DANS LE HTML POUR MARQUER LES EMPLACEMENTS
 
-  /*
-   * TODO @Input to set icon name
-   * Result :
-   * <app-icon [iconName]="'sun-fill'"></app-icon>
-   * I want to display an icon with a filled sun
-   *
-   * Steps :
-   * >>> 1 - Install bootstrap icon library
-   * >>> 2 - Include icon's CSS file into your Angular project
-   * >>> 3 - Test if it working with this example :
-   *   <i class="bi-alarm"></i>
-   *
-   * 4 - Adapt to use the @Input value and replace the class
-   */
+  //@Input() iconName: string = '';
+  //@Input() message: string = '';
 }
