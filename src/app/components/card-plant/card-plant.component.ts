@@ -13,25 +13,24 @@ export class CardPlantComponent {
 
   iconForWater: string = 'bi bi-droplet'; // C'est grace à cette ligne que j'affiche.
   iconForWaterFill: string = '';
-  iconForSun: string = '';
+  iconForSun: string = 'bi bi-brightness-high';
   iconForSunFill: string = '';
-
+  // PAS DE + POSSIBLE DANS LES RETOURN DE CONDITION.
   waterNeedsDisplay() {
     //this.iconForWater = 'bi bi-droplet';
-    if (this.plant.arrosage === 2) {
-      this.iconForWaterFill = 'bi bi-droplet-fill';
-    } else {
-      this.iconForWaterFill = 'bi bi-droplet-fill';
+    if (this.plant.arrosage === 3) {
+      this.iconForWater = 'bi bi-droplet-fill';
+    } else if (this.plant.arrosage === 0) {
+      this.iconForWater = 'bi bi-droplet';
     }
   }
   sunNeedsDisplay() {
     if (this.plant.soleil === 'moyen') {
-      this.iconForSunFill + this.iconForSunFill;
+      this.iconForSunFill = 'bi bi-brightness-high-fill';
     } else if (this.plant.soleil === 'beaucoup') {
-      this.iconForSunFill + this.iconForSunFill + this.iconForSunFill;
+      this.iconForSunFill = 'bi bi-brightness-high-fill';
     } else {
-      this.iconForSun + this.iconForSun + this.iconForSun;
-      console.log('Display test => ', this.iconForSun);
+      this.iconForSunFill = 'bi bi-brightness-high';
     }
   }
 
