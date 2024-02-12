@@ -15,7 +15,7 @@ export class CardPlantComponent {
   iconForWaterFill: string = '';
   iconForSun: string = 'bi bi-brightness-high';
   iconForSunFill: string = '';
-  // PAS DE + POSSIBLE DANS LES RETOURN DE CONDITION.
+  // PAS DE + POSSIBLE DANS LES RETURN DE CONDITION.
   waterNeedsDisplay() {
     //this.iconForWater = 'bi bi-droplet';
     if (this.plant.arrosage === 3) {
@@ -26,11 +26,11 @@ export class CardPlantComponent {
   }
   sunNeedsDisplay() {
     if (this.plant.soleil === 'moyen') {
-      this.iconForSunFill = 'bi bi-brightness-high-fill';
+      this.iconForSun = 'bi bi-brightness-high-fill';
     } else if (this.plant.soleil === 'beaucoup') {
-      this.iconForSunFill = 'bi bi-brightness-high-fill';
+      this.iconForSun = 'bi bi-brightness-high-fill';
     } else {
-      this.iconForSunFill = 'bi bi-brightness-high';
+      this.iconForSun = 'bi bi-brightness-high';
     }
   }
 

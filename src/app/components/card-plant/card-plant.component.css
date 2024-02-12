@@ -5,7 +5,22 @@
 img {
   max-height: 75%;
 }
-.i-design {
+.design-icon {
+  display: flex;
+  justify-content: space-around;
+}
+h6 {
+  font-size: 0.9em;
+}
+.d-text {
+  display: flex;
+  align-self: start;
+}
+.design-Water-Sun {
+  /*background-color: rgb(228, 229, 228);*/
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  margin: 2%;
+  padding: 2%;
 }
