@@ -14,17 +14,24 @@
             <h6>Watering :</h6>
             <h6>{{ plant.arrosage }}</h6>
           </div>
-          <!-- <div class="design-icon">
-            <app-icones [waterIcons]="iconForWater">
-              {{ waterNeedsDisplay() }}</app-icones
-            >
-            <app-icones [waterIcons]="iconForWater">
-              {{ waterNeedsDisplay() }}</app-icones
-            >
-            <app-icones [waterIcons]="iconForWater">
-              {{ waterNeedsDisplay() }}</app-icones
-            >
+          <div>
+            <app-icones
+              [iconName]="'heart-fill'"
+              [iconColor]="'rgb(216, 26, 178)'"
+              [iconSize]="2.2"
+            ></app-icones>
+            <app-icones
+              [iconName]="'heart'"
+              [iconColor]="'rgb(216, 26, 178)'"
+              [iconSize]="2.2"
+            ></app-icones>
+            <app-icones
+              [iconName]="'sun-fill'"
+              [iconColor]="'rgb(253, 213, 15)'"
+              [iconSize]="2.2"
+            ></app-icones>
           </div>
+          <div class="design-icon"></div>
         </div>
         <div>
           <div class="d-text">
@@ -32,34 +39,54 @@
             <h6>{{ plant.soleil }}</h6>
           </div>
           <div class="design-icon">
-            <app-icones [sunshineIcons]="iconForSun">
-              {{ waterNeedsDisplay() }}</app-icones
-            >
-            <app-icones [sunshineIcons]="iconForSun">
-              {{ waterNeedsDisplay() }}</app-icones
-            >
-            <app-icones [sunshineIcons]="iconForSun">
-              {{ waterNeedsDisplay() }}</app-icones
-            >
+            <div>
+              <app-icones
+                [iconName]="'sun-fill'"
+                [iconColor]="'rgb(253, 213, 15)'"
+                [iconSize]="2.2"
+              ></app-icones>
+              <app-icones
+                [iconName]="'droplet-fill'"
+                [iconColor]="'rgb(51, 10, 232)'"
+                [iconSize]="2.2"
+              ></app-icones>
+              <app-icones
+                [iconName]="'droplet-fill'"
+                [iconColor]="'rgb(51, 10, 232)'"
+                [iconSize]="2.2"
+              ></app-icones>
+            </div>
           </div>
         </div>
-        </div>-->
-          <div>
-            <app-icones [iconName]="'heart-fill'"></app-icones>
-            <app-icones [iconName]="'heart-fill'"></app-icones>
-            <app-icones [iconName]="'heart-fill'"></app-icones>
-          </div>
-          <div>
-            <app-icones [iconName]="'heart'"></app-icones>
-            <app-icones [iconName]="'heart'"></app-icones>
-            <app-icones [iconName]="'heart'"></app-icones>
-          </div>
-        </div>
-
-        <a href="#" class="btn btn-success"
-          >I 'd like to <br />have this one.</a
-        >
       </div>
     </div>
+
+    <a href="#" class="btn btn-success">I 'd like to <br />have this one.</a>
   </div>
 </div>
+
+<!--
+  <app-icones [waterIcons]="iconForWater">
+              {{ waterNeedsDisplay() }}</app-icones
+            >
+            <app-icones [waterIcons]="iconForWater">
+              {{ waterNeedsDisplay() }}</app-icones
+            >
+            <app-icones [waterIcons]="iconForWater">
+              {{ waterNeedsDisplay() }}</app-icones
+            >
+
+-->
+
+<!--
+   <app-icones [sunshineIcons]="iconForSun">
+              {{ waterNeedsDisplay() }}</app-icones
+            >
+            <app-icones [sunshineIcons]="iconForSun">
+              {{ waterNeedsDisplay() }}</app-icones
+            >
+            <app-icones [sunshineIcons]="iconForSun">
+              {{ waterNeedsDisplay() }}</app-icones
+            >
+
+-->
