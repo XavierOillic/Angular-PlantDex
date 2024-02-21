@@ -11,24 +11,7 @@
       <div class="design-Water-Sun">
         <div>
           <div class="d-text">
-            <h6>Watering :</h6>
-            <h6>{{ plant.arrosage }}</h6>
-          </div>
-          <div class="design-icon">
-            <app-icones [waterIcons]="iconForWater">
-              {{ waterNeedsDisplay() }}</app-icones
-            >
-            <app-icones [waterIcons]="iconForWater">
-              {{ waterNeedsDisplay() }}</app-icones
-            >
-            <app-icones [waterIcons]="iconForWater">
-              {{ waterNeedsDisplay() }}</app-icones
-            >
-          </div>
-        </div>
-        <div>
-          <div class="d-text">
-            <h6>Sunshine :</h6>
+            <h6>Sunshine:&nbsp;</h6>
             <h6>{{ plant.soleil }}</h6>
           </div>
           <div class="design-icon">
@@ -39,6 +22,23 @@
               {{ waterNeedsDisplay() }}</app-icones
             >
             <app-icones [sunshineIcons]="iconForSun">
+              {{ waterNeedsDisplay() }}</app-icones
+            >
+          </div>
+        </div>
+        <div>
+          <div class="d-text">
+            <h6>Watering:&nbsp;</h6>
+            <h6>{{ plant.arrosage }}</h6>
+          </div>
+          <div class="design-icon">
+            <app-icones [waterIcons]="iconForWater">
+              {{ waterNeedsDisplay() }}</app-icones
+            >
+            <app-icones [waterIcons]="iconForWater">
+              {{ waterNeedsDisplay() }}</app-icones
+            >
+            <app-icones [waterIcons]="iconForWater">
               {{ waterNeedsDisplay() }}</app-icones
             >
           </div>
@@ -68,4 +68,6 @@
           <app-icones [waterIcons]="iconForWater" [sunshineIcons]="iconForSun">
             {{ waterNeedsDisplay() }}{{ sunNeedsDisplay() }}</app-icones
           >
+
+          &nbsp; ====> NON BREAKING SPACE
 -->
