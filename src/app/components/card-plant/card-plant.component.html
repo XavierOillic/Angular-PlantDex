@@ -90,11 +90,25 @@
             >
           </div>
         </div>
+        <div>
+          <div class="d-text">
+            <h6>Watering:&nbsp;</h6>
+            <h6>{{ plant.arrosage }}</h6>
+          </div>
+          <div class="design-icon">
+            <app-icones [waterIcons]="iconForWater">
+              {{ waterNeedsDisplay() }}</app-icones
+            >
+            <app-icones [waterIcons]="iconForWater">
+              {{ waterNeedsDisplay() }}</app-icones
+            >
+            <app-icones [waterIcons]="iconForWater">
+              {{ waterNeedsDisplay() }}</app-icones
+            >
+          </div>
+        </div>
       </div>
-      <div></div>
     </div>
-
-    <a href="#" class="btn btn-success">I 'd like to <br />have this one.</a>
   </div>
 </div>
 
@@ -115,4 +129,6 @@
           <app-icones [waterIcons]="iconForWater" [sunshineIcons]="iconForSun">
             {{ waterNeedsDisplay() }}{{ sunNeedsDisplay() }}</app-icones
           >
+
+          &nbsp; ====> NON BREAKING SPACE
 -->
