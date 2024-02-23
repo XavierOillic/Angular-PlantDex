@@ -1,1 +1,48 @@
-<p>page-admin works!</p>
+<h1>Page Admin PlantDex</h1>
+<div>
+  <div>
+    <h1>Administration</h1>
+    <h2>Add, Update, Delete</h2>
+  </div>
+  <form action="/ma-page-admin" method="post">
+    <ul>
+      <li>
+        <label for="add"> >> AJOUTER &nbsp;:&nbsp;</label>
+        <input type="text" id="ajouter" name="ajouter" />
+      </li>
+      <li>
+        <label for="mail"> >> MODIFIER &nbsp;:&nbsp;</label>
+        <input type="text" id="modifier" name="modifier" />
+      </li>
+      <li>
+        <label for="msg"> >> SUPPRIMER &nbsp;:&nbsp;</label>
+        <input type="text" id="mail" name="user_mail" />
+      </li>
+    </ul>
+  </form>
+</div>
+<table class="table">
+  <!-- C'est la classe Bootstrap TABLE-->
+  <thead class="thead-design">
+    <th>Nom</th>
+    <th>Image</th>
+    <th>Catégorie</th>
+    <th>Ensoleillement</th>
+    <th>Arrosage</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let plantData of plantsToAdmin">
+      <td>{{ plantData.nom }}</td>
+      <td class="col-img">
+        <img
+          class="size"
+          src="{{ plantData.image }}"
+          alt="Image : {{ plantData.nom }} "
+        />
+      </td>
+      <td>{{ plantData.categorie }}</td>
+      <td>{{ plantData.soleil }}</td>
+      <td>{{ plantData.arrosage }}</td>
+    </tr>
+  </tbody>
+</table>

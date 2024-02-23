@@ -16,6 +16,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { FilterButtonsComponent } from './components/filter-buttons/filter-buttons.component';
 import { IconesComponent } from './components/icones/icones.component';
 import { LegendComponent } from './components/legend/legend.component';
+import { AdminFormComponent } from './components/admin-form/admin-form.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { LegendComponent } from './components/legend/legend.component';
     FilterButtonsComponent,
     IconesComponent,
     LegendComponent,
+    AdminFormComponent,
   ],
   imports: [
     BrowserModule,
