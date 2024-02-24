@@ -1,27 +1,10 @@
-<i class="{{ waterIcons }} b-color icon-margin"></i>
-<i class="{{ sunshineIcons }} y-color icon-margin"></i>
+<!--<i class="{{ waterIcons }} b-color icon-margin"></i>
+<i class="{{ sunshineIcons }} y-color icon-margin"></i>-->
 
-<!--
-  <div class="design-Water-Sun">
-  <div class="sun-icon-design">
-    <div class="align-icon b-color">
-      <tr>
-        <i class="{{ waterIcons }} icon-margin"></i>
-      </tr>
-    </div>
-  </div>
-  <div class="drop-icon-design">
-    <div class="align-icon y-color">
-      <tr>
-        <i class="{{ sunshineIcons }} icon-margin"></i>
-      </tr>
-    </div>
-  </div>
-</div>
--->
-
-<!--LES PLACES DE PARKING SONT CRÉÉES ET DESSINÉES
-ELLES SONT PRETES !
- <td><h6>Message venu du parent : {{ message }}</h6></td>
- <i class="{{ iconName }}"></i>
--->
+<i
+  class="bi bi-{{ iconName }}"
+  [ngStyle]="{ 'font-size.rem': iconSize, color: iconColor }"
+></i>
+<!--CONCATENE la VARIABLE qui vient du TS, avec la valeur de la classe BI-->
+<!-- Je définie les VALEURS TAILLE et COULEUR grâce à la variable définie dans le TS, 
+et cette valeur SERA ECRASEE si elle est redéfinie dans le parent-->

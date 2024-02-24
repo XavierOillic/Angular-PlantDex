@@ -19,7 +19,7 @@ export class FilterSideBarComponent {
     const target = event.target as HTMLInputElement;
 
     //Le target, c'est l'élement duquel provient l'EVENT du CHANGE (CLICK)
-    // Et je lui dit qu'il considère cela AS un evenment HTML.
+    // Et je lui dit qu'il considère cela AS un evenement HTML.
     // if (cochee == true && valeur != undefined)
 
     if (target.checked) {

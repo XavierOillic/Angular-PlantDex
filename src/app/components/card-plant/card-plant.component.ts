@@ -9,7 +9,7 @@ import { Plant } from 'src/app/models/plant';
 export class CardPlantComponent {
   @Input() plant!: Plant;
 
-  iconName: string = '';
+  //iconName: string = '';
 
   iconForWater: string = 'bi bi-droplet'; // C'est grace à cette ligne que j'affiche.
   iconForWaterFill: string = '';

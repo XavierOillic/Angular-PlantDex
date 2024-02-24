@@ -1,0 +1,17 @@
+.size {
+  max-width: 60%;
+  width: auto;
+}
+
+.td-design {
+  background-color: rgb(59, 68, 63);
+  color: beige;
+  padding: 2%;
+}
+.table {
+  justify-content: space-around;
+  padding: 2%;
+}
+.col-img {
+  max-width: 100px;
+}
