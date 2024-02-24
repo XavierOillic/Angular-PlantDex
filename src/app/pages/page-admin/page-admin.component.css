@@ -1,12 +1,16 @@
 .size {
-  max-width: 60%;
+  max-width: 80%;
   width: auto;
 }
 
-.td-design {
-  background-color: rgb(59, 68, 63);
-  color: beige;
-  padding: 2%;
+td {
+  background-color: rgb(241, 242, 241);
+  color: rgb(42, 43, 42);
+  padding: 0.5%;
+  vertical-align: middle;
+}
+th {
+  text-align: center;
 }
 .table {
   justify-content: space-around;
@@ -14,4 +18,17 @@
 }
 .col-img {
   max-width: 100px;
+}
+.design-btn {
+  background-color: rgb(54, 67, 54);
+  font-size: 0.6rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0.8%;
+  border-radius: 5px;
+}
+.left-pad {
+  padding-left: 3%;
+}
+a.link {
+  color: black;
 }

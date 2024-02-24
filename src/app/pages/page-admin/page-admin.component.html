@@ -2,17 +2,10 @@
 <div>
   <button>&nbsp;<a href="admin/new-plant"> AJOUTER PLANTE !&nbsp;</a></button>
 </div>
-<div>
-  <button>&nbsp;<a href="admin/edit-plant">MODIFIER PLANTE !&nbsp;</a></button>
-</div>
 
 <table class="table">
   <!-- C'est la classe Bootstrap TABLE-->
   <thead class="thead-design">
-    <th>
-      Cocher pour <br />
-      modifier...
-    </th>
     <th>Nom</th>
     <th>Image</th>
     <th>Catégorie</th>
@@ -21,23 +14,25 @@
   </thead>
   <tbody>
     <tr *ngFor="let plantData of plantsToAdmin">
-      <td>
-        <input
+      <td class="left-pad">
+        <!--<input
           type="checkbox"
           class="update"
           value="{{ plantData }}"
           id="{{ plantData }}"
           (choosePlantToUpdate)="updatePlantBtn($event)"
-        />
-      </td>
-      <td>
-        <input
-          type="checkbox"
-          class="update"
+        />-->
+        <button
+          class="design-btn"
           value="{{ plantData }}"
-          id="{{ plantData }}"
-          (choosePlantToUpdate)="updatePlantBtn($event)"
-        />&nbsp;&nbsp;{{ plantData.nom }}
+          id="{{ plantData }} "
+          [ngStyle]="{ width: '5rem' }"
+        >
+          &nbsp;<a href="admin/edit-plant" [ngStyle]="{ color: 'white' }"
+            >Update</a
+          >
+        </button>
+        &nbsp;&nbsp;{{ plantData.nom }}
       </td>
       <td class="col-img">
         <img
