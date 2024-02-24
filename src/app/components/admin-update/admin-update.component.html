@@ -1,27 +1,23 @@
 <div>
   <div>
-    <h2><strong>Create</strong>, Read, Update, Delete</h2>
+    <h2>Create, Read, <strong>Update</strong>, Delete</h2>
   </div>
   <form
     [formGroup]="formPlantTs"
-    (ngSubmit)="onSubmitForm()"
+    (ngSubmit)="toUpdateForm()"
     class="form-design"
   >
     <div clas="mb-3">
       <label for="nom-plant" class="form-label"> >> PLant Name : &nbsp;</label>
       <input
         type="text"
-        placeholder="Nom de la Plante"
+        placeholder="{{ plantUpdating }}"
         formControlName="nom"
         id="nom-plant"
         class="form-control"
-        [ngClass]="{
-          'is-invalid':
-            formPlantTs.controls['nom'].touched &&
-            formPlantTs.controls['nom'].invalid
-        }"
         aria-labelledby="invalid-feedback-input-name"
       />
+
       <div class="invalid-feedback" id="invalid-feedback-input-name">
         Ce champ est requis
       </div>
@@ -85,12 +81,8 @@
       />
     </div>
     <div>
-      <button
-        class="btn btn-success"
-        [disabled]="formPlantTs.invalid"
-        type="submit"
-      >
-        Créer la PLante !
+      <button class="btn btn-success" type="submit">
+        Modifier la PLante !
       </button>
       <!-- Si le champ n'est pas rempli ou mal rempli, le boutton reste invalide [disabled]="formPLant.invalid"-->
     </div>
