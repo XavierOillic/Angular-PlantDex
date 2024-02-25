@@ -1,91 +1,95 @@
 <!-- LE COMPOSANT QUI PERMET DE MODIFIER PLANTE-->
-<div>
-  <div>
-    <h2>Create, Read, <strong>Update</strong>, Delete</h2>
+<div class="design">
+  <div class="title-design">
+    <h3>Create, Read, <strong>Update</strong>, Delete</h3>
   </div>
-  <form
-    [formGroup]="formPlantTs"
-    (ngSubmit)="toUpdateForm()"
-    class="form-design"
-  >
-    <div clas="mb-3">
-      <label for="nom-plant" class="form-label"> >> PLant Name : &nbsp;</label>
-      <input
-        type="text"
-        placeholder="{{ plant.nom }}"
-        formControlName="nom"
-        id="nom-plant"
-        class="form-control"
-        aria-labelledby="invalid-feedback-input-name"
-      />
+  <div>
+    <form
+      [formGroup]="formPlantTs"
+      (ngSubmit)="toUpdateForm()"
+      class="form-design"
+    >
+      <div clas="mb-3">
+        <label for="nom-plant" class="form-label">
+          >> PLant Name : &nbsp;</label
+        >
+        <input
+          type="text"
+          placeholder="{{ plant.nom }}"
+          formControlName="nom"
+          id="nom-plant"
+          class="form-control"
+          aria-labelledby="invalid-feedback-input-name"
+        />
 
-      <div class="invalid-feedback" id="invalid-feedback-input-name">
-        Ce champ est requis
+        <div class="invalid-feedback" id="invalid-feedback-input-name">
+          Ce champ est requis
+        </div>
       </div>
-    </div>
-    <div clas="mb-3">
-      <label for="categorie-plant" class="form-label">
-        >> PLant Categorie : &nbsp;</label
-      >
-      <input
-        type="text"
-        placeholder="{{ plant.categorie }}"
-        formControlName="categorie"
-        id="categorie-plant"
-        class="form-control"
-      />
-    </div>
-    <div clas="mb-3">
-      <label for="soleil-plant" class="form-label">
-        >> PLant Soleil : &nbsp;</label
-      >
-      <input
-        type="text"
-        placeholder="{{ plant.soleil }}"
-        formControlName="soleil"
-        id="soleil-plant"
-        class="form-control"
-      />
-    </div>
-    <div clas="mb-3">
-      <label for="arrosage-plant" class="form-label">
-        >> PLant Arrosage : &nbsp;</label
-      >
-      <input
-        type="text"
-        placeholder="{{ plant.arrosage }}"
-        formControlName="arrosage"
-        id="arrosage-plant"
-        class="form-control"
-      />
-    </div>
-    <div clas="mb-3">
-      <label for="image-plant" class="form-label">
-        >> PLant image : &nbsp;</label
-      >
-      <input
-        type="text"
-        placeholder="{{ plant.image }}"
-        formControlName="image"
-        id="image-plant"
-        class="form-control"
-      />
-    </div>
-    <div clas="mb-3">
-      <label for="id-plant" class="form-label"> >> PLant id : &nbsp;</label>
-      <input
-        type="text"
-        placeholder="{{ plant.id }}"
-        formControlName="id"
-        id="id-plant"
-        class="form-control"
-      />
-    </div>
-    <div>
-      <button class="btn btn-success" type="submit">
-        Modifier la PLante !
-      </button>
-      <!-- Si le champ n'est pas rempli ou mal rempli, le boutton reste invalide [disabled]="formPLant.invalid"-->
-    </div>
-  </form>
+      <div clas="mb-3">
+        <label for="categorie-plant" class="form-label">
+          >> PLant Categorie : &nbsp;</label
+        >
+        <input
+          type="text"
+          placeholder="{{ plant.categorie }}"
+          formControlName="categorie"
+          id="categorie-plant"
+          class="form-control"
+        />
+      </div>
+      <div clas="mb-3">
+        <label for="soleil-plant" class="form-label">
+          >> PLant Soleil : &nbsp;</label
+        >
+        <input
+          type="text"
+          placeholder="{{ plant.soleil }}"
+          formControlName="soleil"
+          id="soleil-plant"
+          class="form-control"
+        />
+      </div>
+      <div clas="mb-3">
+        <label for="arrosage-plant" class="form-label">
+          >> PLant Arrosage : &nbsp;</label
+        >
+        <input
+          type="text"
+          placeholder="{{ plant.arrosage }}"
+          formControlName="arrosage"
+          id="arrosage-plant"
+          class="form-control"
+        />
+      </div>
+      <div clas="mb-3">
+        <label for="image-plant" class="form-label">
+          >> PLant image : &nbsp;</label
+        >
+        <input
+          type="text"
+          placeholder="{{ plant.image }}"
+          formControlName="image"
+          id="image-plant"
+          class="form-control"
+        />
+      </div>
+      <div clas="mb-3">
+        <label for="id-plant" class="form-label"> >> PLant id : &nbsp;</label>
+        <input
+          type="text"
+          placeholder="{{ plant.id }}"
+          formControlName="id"
+          id="id-plant"
+          class="form-control"
+        />
+      </div>
+      <div>
+        <button class="btn btn-success" type="submit">
+          Modifier la PLante !
+        </button>
+        <!-- Si le champ n'est pas rempli ou mal rempli, le boutton reste invalide [disabled]="formPLant.invalid"-->
+      </div>
+    </form>
+  </div>
 </div>

@@ -1,2 +1,8 @@
-.form-design {
+.design {
+  background-color: rgb(241, 246, 235);
+  padding: 5%;
+}
+.title-design {
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
