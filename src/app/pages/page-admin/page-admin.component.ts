@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Plant } from 'src/app/models/plant';
 import { PlantsService } from 'src/app/services/plants.service';
 
@@ -12,13 +12,14 @@ export class PageAdminComponent implements OnInit {
   // C'est ICI QUE JE FAIS L'INJECTION DE DEPENDANCES pour utiliser les services de PLantsServices.
 
   plantsToAdmin: Plant[] = []; // JE déclare mon tableau TYPÉ  à vide
-  checkBoxValuePropriety: Plant[] = [];
+  plantToModify: Plant[] = [];
 
   @Output() sendModifyPlant = new EventEmitter();
-  updatePlantBtn(eventPlantChoosen: Event) {
-    const target = eventPlantChoosen.target as HTMLInputElement;
-    console.log('Affichage depuis Page Admin', target.value);
-    this.sendModifyPlant.emit(eventPlantChoosen);
+
+  sendChoosenPlantToUpdate(updateByAdmin: Event) {
+    const target = updateByAdmin.target as HTMLButtonElement;
+    console.log('Affichage ds Page Admin', target.value);
+    this.sendModifyPlant.emit(target.value);
   }
 
   ngOnInit(): void {

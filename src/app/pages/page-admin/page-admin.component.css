@@ -2,6 +2,12 @@
   max-width: 80%;
   width: auto;
 }
+.entete {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 2%;
+}
 
 td {
   background-color: rgb(241, 242, 241);
@@ -19,12 +25,20 @@ th {
 .col-img {
   max-width: 100px;
 }
-.design-btn {
-  background-color: rgb(54, 67, 54);
+.design-update-btn {
+  background-color: rgb(172, 209, 172);
   font-size: 0.6rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 0.8%;
   border-radius: 5px;
+}
+.design-create-btn {
+  background-color: rgb(172, 209, 172);
+  font-size: 1.3rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0.8%;
+  border-radius: 5px;
+  margin-left: 10%;
 }
 .left-pad {
   padding-left: 3%;

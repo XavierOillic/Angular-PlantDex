@@ -1,3 +1,4 @@
+<!-- LE COMPOSANT QUI PERMET DE MODIFIER PLANTE-->
 <div>
   <div>
     <h2>Create, Read, <strong>Update</strong>, Delete</h2>
@@ -11,7 +12,7 @@
       <label for="nom-plant" class="form-label"> >> PLant Name : &nbsp;</label>
       <input
         type="text"
-        placeholder="Nom"
+        placeholder="{{ plant.nom }}"
         formControlName="nom"
         id="nom-plant"
         class="form-control"
@@ -28,7 +29,7 @@
       >
       <input
         type="text"
-        placeholder="categorie"
+        placeholder="{{ plant.categorie }}"
         formControlName="categorie"
         id="categorie-plant"
         class="form-control"
@@ -40,7 +41,7 @@
       >
       <input
         type="text"
-        placeholder="Ensoleillement"
+        placeholder="{{ plant.soleil }}"
         formControlName="soleil"
         id="soleil-plant"
         class="form-control"
@@ -52,7 +53,7 @@
       >
       <input
         type="text"
-        placeholder="Arrosage"
+        placeholder="{{ plant.arrosage }}"
         formControlName="arrosage"
         id="arrosage-plant"
         class="form-control"
@@ -64,7 +65,7 @@
       >
       <input
         type="text"
-        placeholder="Image"
+        placeholder="{{ plant.image }}"
         formControlName="image"
         id="image-plant"
         class="form-control"
@@ -74,7 +75,7 @@
       <label for="id-plant" class="form-label"> >> PLant id : &nbsp;</label>
       <input
         type="text"
-        placeholder="Id"
+        placeholder="{{ plant.id }}"
         formControlName="id"
         id="id-plant"
         class="form-control"

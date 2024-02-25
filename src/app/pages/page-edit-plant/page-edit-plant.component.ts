@@ -8,6 +8,9 @@ import { PlantsService } from 'src/app/services/plants.service';
   styleUrls: ['./page-edit-plant.component.css'],
 })
 export class PageEditPlantComponent {
+blablabla($event: any) {
+throw new Error('Method not implemented.');
+}
   constructor(plantsService: PlantsService) {}
 
   //modifyPlant(plantAmodifier: Event) {}
