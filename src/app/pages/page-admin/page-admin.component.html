@@ -4,13 +4,13 @@
     <h1>Admin. de PlantDex</h1>
   </div>
   <div>
+    <!-- BUTTON ==> DANS ANGULAR : le ROUTERLINK est à PRIVILEGIER : PLUS EFFICIENT !-->
     <button
       class="design-create-btn"
       [ngStyle]="{ width: '15rem', height: '3rem' }"
+      routerLink="/admin/new-plant"
     >
-      &nbsp;<a href="admin/new-plant" [ngStyle]="{ color: 'rgb(40, 44, 40)' }">
-        Ajouter une plante.&nbsp;</a
-      >
+      Ajouter une plante
     </button>
   </div>
 </div>
@@ -24,6 +24,7 @@
     <th>Ensoleillement :</th>
     <th>Arrosage :</th>
     <th>Id :</th>
+    <th>Suppression</th>
   </thead>
   <tbody>
     <tr *ngFor="let plantData of plantsToAdmin">
@@ -33,12 +34,11 @@
           class="design-update-btn"
           value="update-button"
           id="update-button"
-          (drop)="sendChoosenPlantToUpdate($event)"
+          (click)="sendChoosenPlantToUpdate($event)"
           [ngStyle]="{ width: '5rem' }"
+          routerLink="/admin/edit-plant"
         >
-          &nbsp;<a href="admin/edit-plant" [ngStyle]="{ color: 'white' }"
-            >Update</a
-          >
+          Update
         </button>
         &nbsp;&nbsp;{{ plantData.nom }}
       </td>
@@ -53,6 +53,19 @@
       <td>{{ plantData.soleil }}</td>
       <td>{{ plantData.arrosage }}</td>
       <td>{{ plantData.id }}</td>
+      <td class="left-pad">
+        <button
+          type="button"
+          class="design-delete-btn"
+          value="delete-button"
+          id="delete-button"
+          (click)="deletePLant(plantData.id)"
+          [ngStyle]="{ width: '5rem' }"
+        >
+          <!-- Evenement (CLICK) qui déclenche DELETEPLANT par l'ID cf ==> SERVICES -->
+          Delete
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>

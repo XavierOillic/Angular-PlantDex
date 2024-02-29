@@ -32,6 +32,13 @@ th {
   padding: 0.8%;
   border-radius: 5px;
 }
+.design-delete-btn {
+  background-color: rgb(142, 66, 70);
+  font-size: 0.6rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0.8%;
+  border-radius: 5px;
+}
 .design-create-btn {
   background-color: rgb(172, 209, 172);
   font-size: 1.3rem;

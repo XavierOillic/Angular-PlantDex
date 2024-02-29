@@ -14,10 +14,9 @@ import { Plant } from 'src/app/models/plant';
 })
 export class AdminFormComponent implements OnInit {
   formPlantTs!: FormGroup;
+
   @Output() submitFormPlantEnvoi = new EventEmitter<Plant>();
   // LA BOUCHE AU PARENT pour envoyer qqch. ET j'envoie grâce  au SUBMITFORMPLANT
-
- 
 
   ngOnInit(): void {
     this.initFormBanane();

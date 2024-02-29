@@ -1039,14 +1039,6 @@
       "arrosage": "rien",
       "image": "\"img.com\"",
       "id": 1029003
-    },
-    {
-      "nom": "Ma jolie rose",
-      "categorie": "plante qui pique",
-      "soleil": "normal quoi",
-      "arrosage": "normal aussi ",
-      "image": "\"image.com\"",
-      "id": 1029004
     }
   ]
 }
