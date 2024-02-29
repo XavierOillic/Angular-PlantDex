@@ -16,16 +16,28 @@ export class PageAdminComponent implements OnInit {
 
   // C'est ici que j'essaie de récuperer les valeurs de la Plant, et de les envoyer vers la page EDIT pour les modifier
   @Output() sendModifyPlant = new EventEmitter();
+  @Output() sendToDetailsPage = new EventEmitter();
 
-  sendChoosenPlantToUpdate(updateByAdmin: Event) {
-    const target = updateByAdmin.target as HTMLButtonElement;
-    console.log('Affichage ds Page Admin :', target.value);
-    this.sendModifyPlant.emit(target.value);
+  goToDetails(idPlantToGotDetails: number) {
+    console.log('Affichage ds Page Admin :', idPlantToGotDetails);
+    this.sendToDetailsPage.emit(idPlantToGotDetails);
   }
-  deletePLant(deletingPLant: number) {
-    console.log('Affichage ds Page Admin : ');
-    this.plantsService.deletePlant(deletingPLant).subscribe();
-  } //Type NUMBER récupéré après le CLICK à effacer grace à la methode DELETE de SERVICES
+
+  sendChoosenPlantToUpdate(updateByAdmin: number) {
+    console.log('Affichage ds Page Admin :');
+    this.sendModifyPlant.emit(updateByAdmin);
+  }
+  deletePLant(deletedPLant: number) {
+    this.plantsService.deletePlant(deletedPLant).subscribe({
+      next: () => {
+        this.plantsToAdmin = this.plantsToAdmin.filter(
+          (x) => x.id !== deletedPLant
+        );
+      },
+    });
+  }
+  // le filtre me permet de filtrer le tableau pour un REFRESH de l'affichage dès la suppression
+  // le subscribe attend un retour!
 
   ngOnInit(): void {
     this.plantsService.getLaPlants().subscribe((dataPLantJeChoisi) => {

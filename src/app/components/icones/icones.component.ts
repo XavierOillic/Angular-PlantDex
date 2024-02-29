@@ -8,12 +8,14 @@ import { Plant } from 'src/app/models/plant';
 })
 export class IconesComponent {
   @Input() iconName:
+    | 'trash'
     | 'heart'
     | 'heart-fill'
     | 'sun'
     | 'sun-fill'
     | 'droplet'
     | 'droplet-fill' = 'heart';
+
   @Input() iconColor = 'yellow';
   @Input() iconSize: number = 2;
 

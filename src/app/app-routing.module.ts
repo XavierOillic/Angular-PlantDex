@@ -6,6 +6,7 @@ import { PageAdminComponent } from './pages/page-admin/page-admin.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { PageNewPlantComponent } from './pages/page-new-plant/page-new-plant.component';
 import { PageEditPlantComponent } from './pages/page-edit-plant/page-edit-plant.component';
+import { PagePlantDetailsComponent } from './pages/page-plant-details/page-plant-details.component';
 
 const routes: Routes = [
   // Set Route for http://localhost:4200 ==> url de base de notre Appli.
@@ -14,10 +15,11 @@ const routes: Routes = [
   { path: 'my-plants', component: PageMyPlantsComponent },
   // Set Route for http://localhost:4200/admin ==> pâge my-plants
   { path: 'admin', component: PageAdminComponent },
-  // Set Route for http://localhost:4200/page-not-found ==> page not found, POSSIBLE grâce au WildCard **
   { path: 'admin/new-plant', component: PageNewPlantComponent },
   { path: 'admin/edit-plant', component: PageEditPlantComponent },
+  { path: 'plants/details/id', component: PagePlantDetailsComponent },
   { path: '**', component: PageNotFoundComponent }, // Celle ci doit rester en dernier !
+  // Set Route for http://localhost:4200/page-not-found ==> page not found, POSSIBLE grâce au WildCard **
 ];
 
 @NgModule({

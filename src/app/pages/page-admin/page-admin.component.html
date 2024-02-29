@@ -4,11 +4,11 @@
     <h1>Admin. de PlantDex</h1>
   </div>
   <div>
-    <!-- BUTTON ==> DANS ANGULAR : le ROUTERLINK est à PRIVILEGIER : PLUS EFFICIENT !-->
+    <!--   BUTTON ==> DANS ANGULAR : le ROUTERLINK est à PRIVILEGIER : PLUS EFFICIENT !-->
     <button
       class="design-create-btn"
-      [ngStyle]="{ width: '15rem', height: '3rem' }"
       routerLink="/admin/new-plant"
+      [ngStyle]="{ width: '15rem', height: '3rem' }"
     >
       Ajouter une plante
     </button>
@@ -16,9 +16,10 @@
 </div>
 
 <table class="table">
-  <!-- C'est la classe Bootstrap TABLE-->
+  <!-- C'est la classe Bootstrap TABLE -->
   <thead class="thead-design">
     <th>Nom :</th>
+    <th>Go to <br />details</th>
     <th>Image :</th>
     <th>Catégorie :</th>
     <th>Ensoleillement :</th>
@@ -34,13 +35,28 @@
           class="design-update-btn"
           value="update-button"
           id="update-button"
-          (click)="sendChoosenPlantToUpdate($event)"
-          [ngStyle]="{ width: '5rem' }"
+          (click)="sendChoosenPlantToUpdate(plantData.id)"
           routerLink="/admin/edit-plant"
+          [ngStyle]="{ width: '5rem' }"
         >
           Update
         </button>
-        &nbsp;&nbsp;{{ plantData.nom }}
+        {{ plantData.nom }}
+      </td>
+      <td>
+        <button
+          type="submit"
+          value="details-button"
+          id="details-button"
+          (click)="goToDetails(plantData.id)"
+          routerLink="/plants/details/id"
+        >
+          <app-icones
+            [iconName]="'heart-fill'"
+            [iconSize]="1"
+            [iconColor]="'purple'"
+          ></app-icones>
+        </button>
       </td>
       <td class="col-img">
         <img
@@ -59,11 +75,11 @@
           class="design-delete-btn"
           value="delete-button"
           id="delete-button"
-          (click)="deletePLant(plantData.id)"
           [ngStyle]="{ width: '5rem' }"
+          (click)="deletePLant(plantData.id)"
         >
+          <app-icones [iconName]="'trash'" [iconSize]="0.8"></app-icones>
           <!-- Evenement (CLICK) qui déclenche DELETEPLANT par l'ID cf ==> SERVICES -->
-          Delete
         </button>
       </td>
     </tr>

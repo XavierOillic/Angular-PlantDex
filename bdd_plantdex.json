@@ -1023,22 +1023,6 @@
       "arrosage": 2,
       "categorie": "palmiers d'intérieur",
       "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910673_001.jpg"
-    },
-    {
-      "nom": "Ma jolie Plante",
-      "categorie": "Plante fleurie",
-      "soleil": "peu",
-      "arrosage": "2",
-      "image": "'img src=assets/logo.png'",
-      "id": 1029002
-    },
-    {
-      "nom": "Autre Plante jolie",
-      "categorie": "Plante seche",
-      "soleil": "Beaucoup beaucoup",
-      "arrosage": "rien",
-      "image": "\"img.com\"",
-      "id": 1029003
     }
   ]
 }

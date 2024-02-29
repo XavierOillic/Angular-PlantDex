@@ -21,6 +21,7 @@ th {
 .table {
   justify-content: space-around;
   padding: 2%;
+  margin-right: 3%;
 }
 .col-img {
   max-width: 100px;
@@ -49,7 +50,4 @@ th {
 }
 .left-pad {
   padding-left: 3%;
-}
-a.link {
-  color: black;
 }
