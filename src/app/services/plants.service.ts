@@ -16,7 +16,7 @@ export class PlantsService {
     return this.http.get<Plant[]>('http://localhost:3000/plants'); // NOUS PERMET GRACE à ce "FETCH" de récuperer le flux de donnée PLAntes
   }
   getLaPlantDetails(plantId: number): Observable<Plant> {
-    const urlDetails = `http://localhost:3000/plants/details/${plantId}`;
+    const urlDetails = `http://localhost:3000/plants/${plantId}`;
     return this.http.get<Plant>(urlDetails);
   }
   createNewPlant(plantToCreate: Plant): Observable<Plant> {

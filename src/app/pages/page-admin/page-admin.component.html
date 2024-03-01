@@ -19,7 +19,6 @@
   <!-- C'est la classe Bootstrap TABLE -->
   <thead class="thead-design">
     <th>Nom :</th>
-    <th>Go to <br />details</th>
     <th>Image :</th>
     <th>Catégorie :</th>
     <th>Ensoleillement :</th>
@@ -43,21 +42,7 @@
         </button>
         {{ plantData.nom }}
       </td>
-      <td>
-        <button
-          type="submit"
-          value="details-button"
-          id="details-button"
-          (click)="goToDetails(plantData.id)"
-          routerLink="/plants/details/id"
-        >
-          <app-icones
-            [iconName]="'heart-fill'"
-            [iconSize]="1"
-            [iconColor]="'purple'"
-          ></app-icones>
-        </button>
-      </td>
+
       <td class="col-img">
         <img
           class="size"

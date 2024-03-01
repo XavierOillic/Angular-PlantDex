@@ -10,23 +10,18 @@ import { PlantsService } from 'src/app/services/plants.service';
 export class PageAdminComponent implements OnInit {
   constructor(private plantsService: PlantsService) {}
   // C'est ICI QUE JE FAIS L'INJECTION DE DEPENDANCES pour utiliser les services de PLantsServices.
+  @Input() plant!: Plant;
 
   plantsToAdmin: Plant[] = []; // JE déclare mon tableau TYPÉ  à vide
   //@Input() plantToModify!: Plant[];
 
-  // C'est ici que j'essaie de récuperer les valeurs de la Plant, et de les envoyer vers la page EDIT pour les modifier
+  //C'est ici que j'essaie de récuperer les valeurs de la Plant, et de les envoyer vers la page EDIT pour les modifier
   @Output() sendModifyPlant = new EventEmitter();
-  @Output() sendToDetailsPage = new EventEmitter();
-
-  goToDetails(idPlantToGotDetails: number) {
-    console.log('Affichage ds Page Admin :', idPlantToGotDetails);
-    this.sendToDetailsPage.emit(idPlantToGotDetails);
-  }
-
   sendChoosenPlantToUpdate(updateByAdmin: number) {
-    console.log('Affichage ds Page Admin :');
-    this.sendModifyPlant.emit(updateByAdmin);
+    /* console.log('Affichage ds Page Admin :');
+    this.sendModifyPlant.emit(updateByAdmin);*/
   }
+
   deletePLant(deletedPLant: number) {
     this.plantsService.deletePlant(deletedPLant).subscribe({
       next: () => {

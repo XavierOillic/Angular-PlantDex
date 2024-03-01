@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Plant } from 'src/app/models/plant';
 
 @Component({
@@ -34,12 +34,11 @@ export class CardPlantComponent {
     }
   }
 
+  @Output() sendToDetailsPage = new EventEmitter();
+  goToDetails(idPlantToGotDetails: number) {
+    console.log('Affichage ds Accueil card :', idPlantToGotDetails);
+    this.sendToDetailsPage.emit(idPlantToGotDetails);
+  }
+
   //monMessage: string = 'Salut les terriens !';
 }
-
-/*
-iconForWaterP: string = 'bi bi-droplet'; // C'est grace à cette ligne que j'affiche.
-  iconForWaterFillP: string = 'bi bi-droplet-fill';
-  iconForSun: string = 'bi bi-brightness-high';
-  iconForSunFill: string = 'bi bi-brightness-high-fill';
-*/

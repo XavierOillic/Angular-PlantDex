@@ -25,3 +25,10 @@ h6 {
   margin: 2%;
   padding: 2%;
 }
+.flex {
+  display: flex;
+}
+.design-details-buy {
+  margin-left: 2%;
+  margin-right: 2%;
+}

@@ -1,134 +1,74 @@
-<div class="card" id="cardDesign">
-  <img [src]="plant.image" class="card-img-top" [alt]="plant.nom" />
-  <div class="card-body">
-    <h5 class="card-title text-truncate" [title]="plant.nom">
-      {{ plant.nom }}
-    </h5>
-    <p class="card-text">
-      {{ plant.categorie }}
-    </p>
-    <div>
-      <div class="design-Water-Sun">
-        <div>
-          <div class="d-text">
-            <h6>Watering :</h6>
-            <h6>{{ plant.arrosage }}</h6>
-          </div>
+<a>
+  <div class="card" id="cardDesign" routerLink="plants/details/{{ plant.id }}">
+    <!--Le ROUTERLINK , ici, me permet de transformer toute la carte en LIEN vers la page détails-->
+    <img [src]="plant.image" class="card-img-top" [alt]="plant.nom" />
+    <div class="card-body">
+      <h5 class="card-title text-truncate" [title]="plant.nom">
+        {{ plant.nom }}
+      </h5>
+      <p class="card-text">
+        {{ plant.categorie }}
+      </p>
+      <div>
+        <div class="design-Water-Sun">
           <div>
-            <app-icones
-              [iconName]="'heart-fill'"
-              [iconColor]="'rgb(216, 26, 178)'"
-              [iconSize]="2.2"
-            ></app-icones>
-            <app-icones
-              [iconName]="'heart'"
-              [iconColor]="'rgb(216, 26, 178)'"
-              [iconSize]="2.2"
-            ></app-icones>
-            <app-icones
-              [iconName]="'sun-fill'"
-              [iconColor]="'rgb(253, 213, 15)'"
-              [iconSize]="2.2"
-            ></app-icones>
-          </div>
-          <div class="design-icon"></div>
-        </div>
-        <div>
-          <div class="d-text">
-            <h6>Sunshine :</h6>
-            <h6>{{ plant.soleil }}</h6>
-          </div>
-          <div class="design-icon">
+            <div class="d-text">
+              <h6>Watering :</h6>
+              <h6>{{ plant.arrosage }}</h6>
+            </div>
             <div>
+              <app-icones
+                [iconName]="'heart-fill'"
+                [iconColor]="'rgb(216, 26, 178)'"
+                [iconSize]="2.2"
+              ></app-icones>
+              <app-icones
+                [iconName]="'heart'"
+                [iconColor]="'rgb(216, 26, 178)'"
+                [iconSize]="2.2"
+              ></app-icones>
               <app-icones
                 [iconName]="'sun-fill'"
                 [iconColor]="'rgb(253, 213, 15)'"
                 [iconSize]="2.2"
               ></app-icones>
-              <app-icones
-                [iconName]="'droplet-fill'"
-                [iconColor]="'rgb(51, 10, 232)'"
-                [iconSize]="2.2"
-              ></app-icones>
-              <app-icones
-                [iconName]="'droplet-fill'"
-                [iconColor]="'rgb(51, 10, 232)'"
-                [iconSize]="2.2"
-              ></app-icones>
+            </div>
+            <div class="design-icon"></div>
+          </div>
+          <div>
+            <div class="d-text">
+              <h6>Sunshine :</h6>
+              <h6>{{ plant.soleil }}</h6>
+            </div>
+            <div class="design-icon">
+              <div>
+                <app-icones
+                  [iconName]="'sun-fill'"
+                  [iconColor]="'rgb(253, 213, 15)'"
+                  [iconSize]="2.2"
+                ></app-icones>
+                <app-icones
+                  [iconName]="'droplet-fill'"
+                  [iconColor]="'rgb(51, 10, 232)'"
+                  [iconSize]="2.2"
+                ></app-icones>
+                <app-icones
+                  [iconName]="'droplet-fill'"
+                  [iconColor]="'rgb(51, 10, 232)'"
+                  [iconSize]="2.2"
+                ></app-icones>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <a href="#" class="btn btn-success">I 'd like to <br />have this one.</a>
-  </div>
-</div>
-
-<!--
-  <app-icones [waterIcons]="iconForWater">
-              {{ waterNeedsDisplay() }}</app-icones
-            >
-            <app-icones [waterIcons]="iconForWater">
-              {{ waterNeedsDisplay() }}</app-icones
-            >
-            <app-icones [waterIcons]="iconForWater">
-              {{ waterNeedsDisplay() }}</app-icones
-            >
-
--->
-
-<!--
-   <app-icones [sunshineIcons]="iconForSun">
-              {{ waterNeedsDisplay() }}</app-icones
-            >
-            <app-icones [sunshineIcons]="iconForSun">
-              {{ waterNeedsDisplay() }}</app-icones
-            >
-            <app-icones [sunshineIcons]="iconForSun">
-              {{ waterNeedsDisplay() }}</app-icones
-            >
-          </div>
-        </div>
-        <div>
-          <div class="d-text">
-            <h6>Watering:&nbsp;</h6>
-            <h6>{{ plant.arrosage }}</h6>
-          </div>
-          <div class="design-icon">
-            <app-icones [waterIcons]="iconForWater">
-              {{ waterNeedsDisplay() }}</app-icones
-            >
-            <app-icones [waterIcons]="iconForWater">
-              {{ waterNeedsDisplay() }}</app-icones
-            >
-            <app-icones [waterIcons]="iconForWater">
-              {{ waterNeedsDisplay() }}</app-icones
-            >
-          </div>
+      <div class="flex">
+        <div class="design-details-buy">
+          <button routerLink="" class="btn btn-success">
+            I 'd like to <br />have this one.
+          </button>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-<!--<span><app-icones [icons]="iconBootstrap"></app-icones></span>-->
-<!--<app-icones [message]="monMessage"></app-icones>
- <app-icones
-            [waterIcons]="iconForWaterFill"
-            [sunshineIcons]="iconForSunFill"
-          ></app-icones>
-
-
-            <app-icones
-            >[waterIcons]="plant.arrosage" [sunshineIcons]="plant.soleil"
-            [waterIcons]="iconForWaterP"
-            [sunshineIcons]="iconForSun"
-          </app-icones>
-
-          <app-icones [waterIcons]="iconForWater" [sunshineIcons]="iconForSun">
-            {{ waterNeedsDisplay() }}{{ sunNeedsDisplay() }}</app-icones
-          >
-
-          &nbsp; ====> NON BREAKING SPACE
--->
+</a>

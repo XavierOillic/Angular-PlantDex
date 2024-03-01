@@ -1,0 +1,11 @@
+<div>
+  <div>
+    <h1>{{ plantDetails.nom }}{{ plantDetails.id }}</h1>
+  </div>
+  <div *ngIf="plantDetails">
+    <div><img src="{{ plantDetails.image }}" /></div>
+    <div>{{ plantDetails.categorie }}</div>
+    <div>{{ plantDetails.arrosage }}</div>
+    <div>{{ plantDetails.soleil }}</div>
+  </div>
+</div>
