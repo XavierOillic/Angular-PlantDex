@@ -34,8 +34,7 @@
           class="design-update-btn"
           value="update-button"
           id="update-button"
-          (click)="sendChoosenPlantToUpdate(plantData.id)"
-          routerLink="/admin/edit-plant"
+          routerLink="/admin/edit-plant/{{ plantData.id }}"
           [ngStyle]="{ width: '5rem' }"
         >
           Update

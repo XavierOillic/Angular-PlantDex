@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -15,6 +15,7 @@ import { Plant } from 'src/app/models/plant';
 export class AdminFormComponent implements OnInit {
   formPlantTs!: FormGroup;
 
+  @Input() plant!: Plant;
   @Output() submitFormPlantEnvoi = new EventEmitter<Plant>();
   // LA BOUCHE AU PARENT pour envoyer qqch. ET j'envoie grâce  au SUBMITFORMPLANT
 
@@ -24,8 +25,9 @@ export class AdminFormComponent implements OnInit {
 
   initFormBanane() {
     this.formPlantTs = new FormGroup({
-      nom: new FormControl('', Validators.required), // 1er Champ TS du Formulaire
+      nom: new FormControl(this.plant.nom, Validators.required), // 1er Champ TS du Formulaire
       // Entre () : la premiere valeur est du texte '', et elle est REQUIRED.
+      // Le premier champ est la valeur initiale.
       categorie: new FormControl(),
       soleil: new FormControl(),
       arrosage: new FormControl(),

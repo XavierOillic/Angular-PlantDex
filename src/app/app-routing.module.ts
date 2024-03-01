@@ -16,7 +16,8 @@ const routes: Routes = [
   // Set Route for http://localhost:4200/admin ==> pâge my-plants
   { path: 'admin', component: PageAdminComponent },
   { path: 'admin/new-plant', component: PageNewPlantComponent },
-  { path: 'admin/edit-plant', component: PageEditPlantComponent },
+  { path: 'admin/edit-plant/:plantIdEdit', component: PageEditPlantComponent },
+  // Set Route for http://localhost:4200/admin/edit)plant/l'id de la plante ==> page edit plant
   { path: 'plants/details/:id', component: PagePlantDetailsComponent },
   // Les deux points avant id rend cet id dynamique // cet "ID" peut etre BANANE mais il est juste un transport d'une valeur dynamique
   { path: '**', component: PageNotFoundComponent }, // Celle ci doit rester en dernier !

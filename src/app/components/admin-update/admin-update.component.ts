@@ -13,31 +13,29 @@ export class AdminUpdateComponent implements OnInit {
   constructor(private plantsService: PlantsService) {}
   //private pageAdminCompo: PageAdminComponent
   formPlantTs!: FormGroup;
-  plantUpdating: Plant[] = [];
+  plantUpdating!: Plant;
 
   @Input() plant!: Plant;
 
-  toUpdateForm() {
+  toEditForm() {
     throw new Error('Method not implemented.');
   }
 
   @Output() submitForUpdate = new EventEmitter<Plant>();
 
-  ngOnInit(): void {
-    this.initFormUpdate();
-  }
-
   initFormUpdate() {
     this.formPlantTs = new FormGroup({
-      nom: new FormControl('', Validators.required), // 1er Champ TS du Formulaire
+      nom: new FormControl(this.plant.nom, Validators.required), // 1er Champ TS du Formulaire
       // Entre () : la premiere valeur est du texte '', et elle est REQUIRED.
-      categorie: new FormControl(),
-      soleil: new FormControl(),
-      arrosage: new FormControl(),
-      image: new FormControl(),
+      categorie: new FormControl('banana'),
+      soleil: new FormControl('Poire'),
+      arrosage: new FormControl('Fraise'),
+      image: new FormControl('Framboise'),
     });
     console.log(this.formPlantTs);
   }
+
+  ngOnInit(): void {}
 
   //sendChoosenPlantToUpdate() {}
 }
