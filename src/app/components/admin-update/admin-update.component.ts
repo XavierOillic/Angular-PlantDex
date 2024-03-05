@@ -27,10 +27,10 @@ export class AdminUpdateComponent implements OnInit {
     this.formPlantTs = new FormGroup({
       nom: new FormControl(this.plant.nom, Validators.required), // 1er Champ TS du Formulaire
       // Entre () : la premiere valeur est du texte '', et elle est REQUIRED.
-      categorie: new FormControl('banana'),
-      soleil: new FormControl('Poire'),
-      arrosage: new FormControl('Fraise'),
-      image: new FormControl('Framboise'),
+      categorie: new FormControl(this.plant.categorie),
+      soleil: new FormControl(this.plant.soleil),
+      arrosage: new FormControl(this.plant.arrosage),
+      image: new FormControl(this.plant.image),
     });
     console.log(this.formPlantTs);
   }

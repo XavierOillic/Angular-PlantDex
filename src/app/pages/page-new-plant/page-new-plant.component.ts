@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Plant } from 'src/app/models/plant';
 import { PlantsService } from 'src/app/services/plants.service';
@@ -8,8 +8,9 @@ import { PlantsService } from 'src/app/services/plants.service';
   templateUrl: './page-new-plant.component.html',
   styleUrls: ['./page-new-plant.component.css'],
 })
-export class PageNewPlantComponent {
+export class PageNewPlantComponent implements OnInit {
   constructor(private plantsService: PlantsService, private router: Router) {}
+
   newPlantSubmitted(plant: Plant) {
     this.plantsService.createNewPlant(plant).subscribe((respBanane) => {
       console.log('New Plant created', respBanane);
@@ -18,5 +19,9 @@ export class PageNewPlantComponent {
       // Grâce à l'INJECTION de DEPENDANCE  ROUTER et sa méthode NAVIGATE
       // On a ce Navigate qu'avec Router
     });
+  }
+
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
 }
