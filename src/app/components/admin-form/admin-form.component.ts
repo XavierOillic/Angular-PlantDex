@@ -16,6 +16,8 @@ export class AdminFormComponent implements OnInit {
   formPlantTs!: FormGroup;
 
   @Input() plant!: Plant;
+  @Input() plantToEdit!: Plant;
+
   @Output() submitFormPlantEnvoi = new EventEmitter<Plant>();
   // LA BOUCHE AU PARENT pour envoyer qqch. ET j'envoie grâce  au SUBMITFORMPLANT
 
@@ -25,15 +27,15 @@ export class AdminFormComponent implements OnInit {
 
   initFormBanane() {
     this.formPlantTs = new FormGroup({
-      nom: new FormControl(this.plant.nom, Validators.required), // 1er Champ TS du Formulaire
+      nom: new FormControl('', Validators.required), // 1er Champ TS du Formulaire
       // Entre () : la premiere valeur est du texte '', et elle est REQUIRED.
       // Le premier champ est la valeur initiale.
-      categorie: new FormControl(this.plant.categorie),
-      soleil: new FormControl(this.plant.soleil),
-      arrosage: new FormControl(this.plant.arrosage),
-      image: new FormControl(this.plant.image),
+      categorie: new FormControl(),
+      soleil: new FormControl(),
+      arrosage: new FormControl(),
+      image: new FormControl(),
+      id: new FormControl(),
     });
-    console.log(this.formPlantTs);
   }
 
   onSubmitForm() {
@@ -41,40 +43,16 @@ export class AdminFormComponent implements OnInit {
     this.submitFormPlantEnvoi.emit(this.formPlantTs.value);
   }
 }
-
 /*
-  @Input() plant!: Plant;
-  @Input() plantToEdit!: Plant;
-
-  @Output() submitFormPlantEnvoi = new EventEmitter<Plant>();
-
-  ngOnInit(): void {
-    this.initFormBanane();
-  }
-
-  initFormBanane() {
-    if (!this.plant) {
-      this.formPlantTs = new FormGroup({
-        nom: new FormControl(Validators.required),
-        catégorie: new FormControl(),
-        soleil: new FormControl(),
-        arrosage: new FormControl(),
-        image: new FormControl(),
-      });
-    } else if (this.plantToEdit) {
+} else {
       this.formPlantTs = new FormGroup({
         nom: new FormControl(this.plantToEdit.nom, Validators.required),
         categorie: new FormControl(this.plantToEdit.categorie),
         soleil: new FormControl(this.plantToEdit.soleil),
         arrosage: new FormControl(this.plantToEdit.arrosage),
         image: new FormControl(this.plantToEdit.image),
+        id: new FormControl(this.plantToEdit.id),
       });
       console.log(this.formPlantTs);
     }
-  }
-
-  onSubmitForm() {
-    console.log(this.formPlantTs.value);
-    this.submitFormPlantEnvoi.emit(this.formPlantTs.value);
-  }
 */

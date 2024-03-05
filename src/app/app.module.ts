@@ -20,7 +20,7 @@ import { AdminFormComponent } from './components/admin-form/admin-form.component
 import { PageNewPlantComponent } from './pages/page-new-plant/page-new-plant.component';
 import { PageEditPlantComponent } from './pages/page-edit-plant/page-edit-plant.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AdminUpdateComponent } from './components/admin-update/admin-update.component';
+/*import { AdminUpdateComponent } from './components/admin-update/admin-update.component';*/
 import { PagePlantDetailsComponent } from './pages/page-plant-details/page-plant-details.component';
 
 @NgModule({
@@ -40,7 +40,7 @@ import { PagePlantDetailsComponent } from './pages/page-plant-details/page-plant
     AdminFormComponent,
     PageNewPlantComponent,
     PageEditPlantComponent,
-    AdminUpdateComponent,
+    /*AdminUpdateComponent,*/
     PagePlantDetailsComponent,
   ],
   imports: [

@@ -1,3 +1,4 @@
+/*
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Plant } from 'src/app/models/plant';
@@ -39,3 +40,4 @@ export class AdminUpdateComponent implements OnInit {
 
   //sendChoosenPlantToUpdate() {}
 }
+*/

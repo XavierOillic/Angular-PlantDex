@@ -1,9 +1,11 @@
 <!--CETTE PAGE NE FAIT --Q U E-- DE L'AFFICHAGE-->
 <div>
-  <div>
-    <h1>Modification d'une plante !</h1>
-  </div>
   <div class="d-flex justify-content-around">
-    <app-admin-update> </app-admin-update>
+    <app-admin-form
+      [plant]="plantToEdit"
+      (submitFormPLantEnvoi)="plantToEditSubmitted(plantToEdit)"
+    >
+    </app-admin-form>
   </div>
 </div>
+<!---->
