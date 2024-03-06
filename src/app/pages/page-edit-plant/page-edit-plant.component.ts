@@ -15,27 +15,30 @@ export class PageEditPlantComponent implements OnInit {
     private router: Router
   ) {}
 
-  plantToEdit!: Plant;
-
-  plantToEditSubmitted(plantToEdit: Plant) {
-    this.plantsService.editPlant(plantToEdit).subscribe((respEdition) => {
-      console.log('La Plante a été modifiée.', respEdition);
-      this.router.navigate(['/admin']);
-    });
-  }
+  plantEditToDisplay!: Plant;
+  //plantIdNb!: number;
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
-    console.log('Je suis dans PAGE EDIT : ', routeParams);
-    const plantIdFromRoute: number = Number(routeParams.get('id'));
-    console.log('Je suis dans PAGE EDIT : ', plantIdFromRoute);
+    //console.log('Je suis dans PAGE EDIT : ', routeParams);
+    const currentPlantId = Number(routeParams.get('plantIdDetails'));
+    console.log('Je suis dans PAGE EDIT CurrentPlantId : ', currentPlantId);
 
-    this.plantsService.getLaPlantDetails(plantIdFromRoute).subscribe({
-      next: (responseForEdit) => {
-        this.plantToEdit = responseForEdit;
-        console.log('Je suis dans page edit : ', this.plantToEdit);
+    this.plantsService.getLaPlantDetails(currentPlantId).subscribe({
+      next: (respUnePlante) => {
+        this.plantEditToDisplay = respUnePlante;
+        console.log('Page edit(respUnePlante) ', this.plantEditToDisplay);
       },
       error: () => {},
     });
+  }
+
+  plantToEditSubmitted(plant: Plant) {
+    this.plantsService
+      .modifyPlantService(plant.id, plant)
+      .subscribe((respEdition) => {
+        console.log('La Plante a été modifiée.', respEdition);
+        this.router.navigate(['/admin']);
+      });
   }
 }

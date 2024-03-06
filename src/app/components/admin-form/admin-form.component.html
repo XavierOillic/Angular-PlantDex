@@ -1,12 +1,9 @@
 <!-- LE COMPOSANT QUI PERMET DE CREE UNE NOUVELLE PLANTE-->
 <div class="design">
-  <div class="title-design">
-    <h3>Create and Update !</h3>
-  </div>
   <div>
     <form
-      [formGroup]="formPlantTs"
       (ngSubmit)="onSubmitForm()"
+      [formGroup]="formPlantTs"
       class="form-design"
     >
       <div clas="mb-3">

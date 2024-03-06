@@ -1023,6 +1023,14 @@
       "arrosage": 2,
       "categorie": "palmiers d'intérieur",
       "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910673_001.jpg"
+    },
+    {
+      "nom": "a",
+      "categorie": "b",
+      "soleil": "c",
+      "arrosage": "d",
+      "image": "E",
+      "id": "90"
     }
   ]
 }

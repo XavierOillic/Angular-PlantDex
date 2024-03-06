@@ -1,11 +1,13 @@
 <!--CETTE PAGE NE FAIT --Q U E-- DE L'AFFICHAGE-->
 <div>
+  <h2>Modification d'une plante</h2>
   <div class="d-flex justify-content-around">
     <app-admin-form
-      [plant]="plantToEdit"
-      (submitFormPLantEnvoi)="plantToEditSubmitted(plantToEdit)"
+      [plantGotAndEdited]="plantEditToDisplay"
+      (submitFormPlantEnvoi)="plantToEditSubmitted($event)"
     >
     </app-admin-form>
   </div>
 </div>
-<!---->
+<!--[plantGotAndEdited]="plantEditToDisplay"
+      (submitFormPLantEnvoi)="plantToEditSubmitted(plantEditToDisplay)"-->
