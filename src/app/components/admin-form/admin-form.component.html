@@ -1,5 +1,6 @@
 <!-- LE COMPOSANT QUI PERMET DE CREE UNE NOUVELLE PLANTE-->
 <div class="design">
+  <h2>{{ titre }}</h2>
   <div>
     <form
       (ngSubmit)="onSubmitForm()"
@@ -23,6 +24,15 @@
         <div class="invalid-feedback" id="invalid-feedback-input-name">
           Ce champ est requis
         </div>
+      </div>
+      <div clas="mb-3">
+        <label for="image-plant" class="form-label"> >> Photo : </label>
+        <input
+          type="text"
+          formControlName="image"
+          id="image"
+          class="form-control"
+        />
       </div>
       <div clas="mb-3">
         <label for="categorie-plant" class="form-label"> >> Categorie :</label>
@@ -54,19 +64,10 @@
         />
       </div>
       <div clas="mb-3">
-        <label for="image-plant" class="form-label"> >> Photo : </label>
-        <input
-          type="text"
-          formControlName="image"
-          id="image"
-          class="form-control"
-        />
-      </div>
-      <div clas="mb-3">
         <label for="id" class="form-label"> >> Id : </label>
         <input type="text" formControlName="id" id="id" class="form-control" />
       </div>
-      <div>
+      <div class="create-update-btn">
         <button
           class="btn btn-success"
           [disabled]="formPlantTs.invalid"
