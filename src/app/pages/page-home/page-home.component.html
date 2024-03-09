@@ -1,23 +1,25 @@
-<body>
+<body id="body-color-change" [ngStyle]="{ color: colorText() }">
   <div class="d-flex">
     <!--
+[style.background-color]="'{{colorBody()}}'"
+
     <button [title]="monTitle" (click)="displayDiv()">
     Afficher la Div avec mon logo dedans !
   </button>
   <div *ngIf="isDivDisplayed">
     <img src="assets/logo.png" />
   </div>
+  [ngStyle]="{ color: colorText() }"
 -->
 
-    <div id="testRandom" [ngStyle]="{ color: discoColorModeText() }">
+    <div id="testRandom">
       <app-filter-side-bar
         [categoriesToDisplay]="categoriesToSend"
         (categoriesToFilter)="filterPlantsByCategories($event)"
-        (discoSending)="discoColorModeText()"
-        (discoSending)="discoColorModeCard()"
+        (sendColorText)="colorText()"
+        (sendColorCard)="colorCard()"
+        (sendColorBody)="colorBody()"
       ></app-filter-side-bar>
-
-      <!-- //====> ETAPE QUATRE : J'appelle -->
     </div>
 
     <div>
@@ -37,14 +39,15 @@
         ></app-filter-buttons>
       </div>
 
-      <div class="container-plants" [ngStyle]="{ color: discoColorModeCard() }">
+      <div class="container-plants">
         <app-card-plant
           class="one-plant"
           *ngFor="let plantData of plantsToDisplay"
           [plant]="plantData"
         ></app-card-plant>
 
-        <!-- Je Boucle FOR sur le TABTAMPON pour ne pas toucher au tableau originel-->
+        <!-- Je Boucle FOR sur le TABTAMPON pour ne pas toucher au tableau originel
+        -->
       </div>
     </div>
   </div>

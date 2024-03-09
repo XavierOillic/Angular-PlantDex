@@ -1,14 +1,6 @@
 {
   "plants": [
     {
-      "nom": "Ma très jolie rose",
-      "image": "\"https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0952000/952439_001.jpg\"",
-      "categorie": "piquante",
-      "soleil": "peu",
-      "arrosage": "3",
-      "id": 952438
-    },
-    {
       "id": 77390,
       "nom": "Anthurium: Pot 17cm petit modèle - Coloris variables",
       "soleil": "moyen",
@@ -1023,22 +1015,6 @@
       "arrosage": 2,
       "categorie": "palmiers d'intérieur",
       "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910673_001.jpg"
-    },
-    {
-      "nom": "Blabli blu",
-      "image": "\"https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0952000/952439_001.jpg\"",
-      "categorie": "bubu",
-      "soleil": "peu",
-      "arrosage": "3",
-      "id": "111111"
-    },
-    {
-      "nom": "",
-      "image": "",
-      "categorie": "",
-      "soleil": "",
-      "arrosage": "",
-      "id": 1029002
     }
   ]
 }

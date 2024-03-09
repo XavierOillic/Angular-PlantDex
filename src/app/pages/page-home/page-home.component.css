@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(225, 227, 227);
+}
+
 button {
   margin-left: auto;
   margin-right: auto;

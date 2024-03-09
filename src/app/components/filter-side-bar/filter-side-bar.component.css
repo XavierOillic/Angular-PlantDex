@@ -4,3 +4,11 @@
   top: 56px;
   height: calc(100vh - 56px);
 }
+button {
+  margin: 1%;
+  border: Opx;
+  font-size: 0.7em;
+}
+.rdm-btn-design {
+  display: flex;
+}

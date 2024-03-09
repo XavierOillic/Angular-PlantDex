@@ -141,41 +141,41 @@ export class PageHomeComponent implements OnInit {
   color = '#';
   letters = '0123456789ABCDEF';
 
-  discoColorModeText() {
-    console.log('Page-Home, jySuis : ');
+  card: any = document.getElementById('cardDesign');
+  bodyChange: any = document.getElementById('body-color-change');
+
+  colorText() {
+    console.log('Page-Home, colorText !');
     this.color = Math.floor(0x1000000 * Math.random()).toString(16);
     return '#' + ('000000' + this.color).slice(-6);
   }
 
-  discoColorModeCard() {
-    console.log('Page-Home 2nd Btn Body !');
-    for (let c = 0; c < 6; c++) {}
-    this.color += this.letters[Math.floor(Math.random() * 16)];
-    //return (document.body.style.backgroundColor = '#' + this.color);
+  colorCard() {
+    console.log('Page-Home, colorcard !');
+    for (let c = 0; c < 6; c++) {
+      this.color += this.letters[Math.floor(Math.random() * 16)];
+    }
+    return (this.card = '#' + this.color);
+  }
+
+  colorBody() {
+    console.log('Page-Home, colorBody !');
+    for (let c = 0; c < 6; c++) {
+      this.color += this.letters[Math.floor(Math.random() * 16)];
+    }
+    return (this.bodyChange = '#' + this.color);
   }
 }
 
 /*
 
+changeColor(cBody: any) {
+    document.body.style.backgroundColor = cBody;
+  }
+//return (document.body.style.backgroundColor = '#' + this.color);
 
 (document.body.style.backgroundColor = '#' + rdmColor);
 Math.floor(Math.random() * 16).toString();
     
-
-  filterPlantsByCategories(categories: string[]) {
-    this.filtrCheckBox = categories;
-    this.FiltrADeux();
-    /*this.plantsToDisplay = this.plantTampon.filter((x) =>
-      categories.includes(x.categorie)
-    );
-    console.log(`Je suis dans le parent  ==> ${categories}`);
-  }
-
-  filterPlantsByText(searchByText: string) {
-    this.filtrText = searchByText;
-    this.FiltrADeux();
-    this.plantsToDisplay = this.tabTamponByText.filter((y) =>
-      y.nom.toLowerCase().includes(searchByText)
-    )
 
   */

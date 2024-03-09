@@ -47,16 +47,23 @@ export class FilterSideBarComponent {
     }
     this.categoriesToFilter.emit(this.checkedCategories);
   }
-  @Output() discoSending = new EventEmitter();
+  @Output() sendColorText = new EventEmitter();
+  @Output() sendColorBody = new EventEmitter();
+  @Output() sendColorCard = new EventEmitter();
 
-  discoFunction(discoColorText: Event) {
+  colorText(discoColorText: Event) {
     const target = discoColorText.target as HTMLButtonElement;
     //console.log('Dans la NavBar : ', discoColorMode);
-    this.discoSending.emit(target.value);
+    this.sendColorText.emit(target.value);
   }
-  discoFunctionBody(discoColorFond: Event) {
+  colorBody(discoColorFond: Event) {
     const target = discoColorFond.target as HTMLButtonElement;
     //console.log('Dans la NavBar : ', discoColorMode);
-    this.discoSending.emit(target.value);
+    this.sendColorBody.emit(target.value);
+  }
+  colorCard(discoColorCard: Event) {
+    const target = discoColorCard.target as HTMLButtonElement;
+    //console.log('Dans la NavBar : ', discoColorMode);
+    this.sendColorCard.emit(target.value);
   }
 }
