@@ -1,10 +1,15 @@
 <div class="custom-side-bar border-end">
   <div class="p-3">
     <span class="fs-5 fw-semibold">Filtres</span>
+    <div>
+      <button (click)="discoFunction($event)">Disco Color Text</button>
+      <button (click)="discoFunctionBody($event)">Disco Color Fond</button>
+    </div>
   </div>
   <hr />
   <div class="px-3">
     <p class="fs-5 fw-semibold">Catégorie</p>
+
     <!-- ETAPE DEUX ENFANT HTML Je fais la boucle.-->
     <div class="form-check" *ngFor="let category of categoriesToDisplay">
       <!-- Avec ce ngFor, je boucle avec CATEGORY sur categoriesToDisplay pour affcher autant de case à cocher que de catégories présentes dans le PlantsToDisplay  -->

@@ -136,10 +136,32 @@ export class PageHomeComponent implements OnInit {
     this.tabPlantFiltrAlpha = [...this.plantsToDisplay];
   }
 
-  iconNameTest:string = ''
+  iconNameTest: string = '';
+
+  color = '#';
+  letters = '0123456789ABCDEF';
+
+  discoColorModeText() {
+    console.log('Page-Home, jySuis : ');
+    this.color = Math.floor(0x1000000 * Math.random()).toString(16);
+    return '#' + ('000000' + this.color).slice(-6);
+  }
+
+  discoColorModeCard() {
+    console.log('Page-Home 2nd Btn Body !');
+    for (let c = 0; c < 6; c++) {}
+    this.color += this.letters[Math.floor(Math.random() * 16)];
+    //return (document.body.style.backgroundColor = '#' + this.color);
+  }
 }
 
 /*
+
+
+(document.body.style.backgroundColor = '#' + rdmColor);
+Math.floor(Math.random() * 16).toString();
+    
+
   filterPlantsByCategories(categories: string[]) {
     this.filtrCheckBox = categories;
     this.FiltrADeux();

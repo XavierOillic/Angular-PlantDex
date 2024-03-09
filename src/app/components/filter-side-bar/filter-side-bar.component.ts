@@ -47,4 +47,16 @@ export class FilterSideBarComponent {
     }
     this.categoriesToFilter.emit(this.checkedCategories);
   }
+  @Output() discoSending = new EventEmitter();
+
+  discoFunction(discoColorText: Event) {
+    const target = discoColorText.target as HTMLButtonElement;
+    //console.log('Dans la NavBar : ', discoColorMode);
+    this.discoSending.emit(target.value);
+  }
+  discoFunctionBody(discoColorFond: Event) {
+    const target = discoColorFond.target as HTMLButtonElement;
+    //console.log('Dans la NavBar : ', discoColorMode);
+    this.discoSending.emit(target.value);
+  }
 }
