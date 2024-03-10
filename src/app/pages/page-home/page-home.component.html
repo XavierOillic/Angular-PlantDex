@@ -8,8 +8,6 @@
   <div *ngIf="isDivDisplayed">
     <img src="assets/logo.png" />
   </div>
-  [ngStyle]="{ color: colorText() }"
-  (sendColorCard)="colorCard()"
 -->
 
       <div id="testRandom">
@@ -18,6 +16,7 @@
           (categoriesToFilter)="filterPlantsByCategories($event)"
           (sendColorText)="colorText()"
           (sendColorBody)="colorBody(color)"
+          (sendReset)="resetAllColors(color)"
         ></app-filter-side-bar>
       </div>
 

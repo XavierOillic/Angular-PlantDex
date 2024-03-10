@@ -16,7 +16,6 @@ export class PageEditPlantComponent implements OnInit {
   ) {}
 
   plantEditToDisplay!: Plant;
-  //plantIdNb!: number;
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
@@ -37,8 +36,10 @@ export class PageEditPlantComponent implements OnInit {
     this.plantsService
       .modifyPlantService(plant.id, plant)
       .subscribe((respEdition) => {
+        //Le subscribe me fait attendre la réponse du server
         console.log('La Plante a été modifiée.', respEdition);
         this.router.navigate(['/admin']);
+        // une fois que j'ai la réponse, je navigue vers la page admin.
       });
   }
 }

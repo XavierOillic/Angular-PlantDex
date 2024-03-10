@@ -155,6 +155,19 @@ export class PageHomeComponent implements OnInit {
     }
     return rdmColor;
   }
+  resetAllColors(colorReseted: string) {
+    if (
+      this.colorBody(this.color) !== "'#FFFFFF'" &&
+      this.colorText() !== "'#FFFFFF'"
+    ) {
+      colorReseted == 'white';
+    } else if (
+      this.colorBody(this.color) !== "'#000000'" &&
+      this.colorText() !== "'#000000'"
+    ) {
+      colorReseted === 'black';
+    }
+  }
 }
 
 /*
