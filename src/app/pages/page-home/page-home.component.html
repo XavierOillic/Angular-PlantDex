@@ -1,8 +1,7 @@
-<body id="body-color-change" [ngStyle]="{ color: colorText() }">
-  <div class="d-flex">
-    <!--
-[style.background-color]="'{{colorBody()}}'"
-
+<div [ngStyle]="{ backgroundColor: colorBody(color) }">
+  <div [ngStyle]="{ color: colorText() }">
+    <div class="d-flex">
+      <!--
     <button [title]="monTitle" (click)="displayDiv()">
     Afficher la Div avec mon logo dedans !
   </button>
@@ -10,45 +9,45 @@
     <img src="assets/logo.png" />
   </div>
   [ngStyle]="{ color: colorText() }"
+  (sendColorCard)="colorCard()"
 -->
 
-    <div id="testRandom">
-      <app-filter-side-bar
-        [categoriesToDisplay]="categoriesToSend"
-        (categoriesToFilter)="filterPlantsByCategories($event)"
-        (sendColorText)="colorText()"
-        (sendColorCard)="colorCard()"
-        (sendColorBody)="colorBody()"
-      ></app-filter-side-bar>
-    </div>
-
-    <div>
-      <div>
-        <app-search-bar
-          (myrtilleVersParent)="filterPlantsByText($event)"
-          class="searchDesign"
-        ></app-search-bar>
+      <div id="testRandom">
+        <app-filter-side-bar
+          [categoriesToDisplay]="categoriesToSend"
+          (categoriesToFilter)="filterPlantsByCategories($event)"
+          (sendColorText)="colorText()"
+          (sendColorBody)="colorBody(color)"
+        ></app-filter-side-bar>
       </div>
 
       <div>
-        <app-filter-buttons
-          (alphabetic_btn)="sortByAlphabetic($event)"
-          (reset_btn)="resetAlpha($event)"
-          (sunny_btn)="sortBySunshine($event)"
-          (water_btn)="sortByWater($event)"
-        ></app-filter-buttons>
-      </div>
+        <div>
+          <app-search-bar
+            (myrtilleVersParent)="filterPlantsByText($event)"
+            class="searchDesign"
+          ></app-search-bar>
+        </div>
 
-      <div class="container-plants">
-        <app-card-plant
-          class="one-plant"
-          *ngFor="let plantData of plantsToDisplay"
-          [plant]="plantData"
-        ></app-card-plant>
+        <div>
+          <app-filter-buttons
+            (alphabetic_btn)="sortByAlphabetic($event)"
+            (reset_btn)="resetAlpha($event)"
+            (sunny_btn)="sortBySunshine($event)"
+            (water_btn)="sortByWater($event)"
+          ></app-filter-buttons>
+        </div>
 
-        <!-- Je Boucle FOR sur le TABTAMPON pour ne pas toucher au tableau originel
-        -->
+        <div class="container-plants">
+          <app-card-plant
+            class="one-plant"
+            *ngFor="let plantData of plantsToDisplay"
+            [plant]="plantData"
+          ></app-card-plant>
+
+          <!-- Je Boucle FOR sur le TABTAMPON pour ne pas toucher au tableau originel
+        --></div>
       </div>
     </div>
   </div>
-</body>
+</div>

@@ -141,29 +141,19 @@ export class PageHomeComponent implements OnInit {
   color = '#';
   letters = '0123456789ABCDEF';
 
-  card: any = document.getElementById('cardDesign');
-  bodyChange: any = document.getElementById('body-color-change');
-
   colorText() {
     console.log('Page-Home, colorText !');
     this.color = Math.floor(0x1000000 * Math.random()).toString(16);
     return '#' + ('000000' + this.color).slice(-6);
   }
 
-  colorCard() {
-    console.log('Page-Home, colorcard !');
-    for (let c = 0; c < 6; c++) {
-      this.color += this.letters[Math.floor(Math.random() * 16)];
-    }
-    return (this.card = '#' + this.color);
-  }
-
-  colorBody() {
+  colorBody(rdmColor: any) {
     console.log('Page-Home, colorBody !');
-    for (let c = 0; c < 6; c++) {
+    this.color = '#';
+    for (var i = 0; i < 6; i++) {
       this.color += this.letters[Math.floor(Math.random() * 16)];
     }
-    return (this.bodyChange = '#' + this.color);
+    return rdmColor;
   }
 }
 

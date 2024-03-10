@@ -49,7 +49,6 @@ export class FilterSideBarComponent {
   }
   @Output() sendColorText = new EventEmitter();
   @Output() sendColorBody = new EventEmitter();
-  @Output() sendColorCard = new EventEmitter();
 
   colorText(discoColorText: Event) {
     const target = discoColorText.target as HTMLButtonElement;
@@ -60,10 +59,5 @@ export class FilterSideBarComponent {
     const target = discoColorFond.target as HTMLButtonElement;
     //console.log('Dans la NavBar : ', discoColorMode);
     this.sendColorBody.emit(target.value);
-  }
-  colorCard(discoColorCard: Event) {
-    const target = discoColorCard.target as HTMLButtonElement;
-    //console.log('Dans la NavBar : ', discoColorMode);
-    this.sendColorCard.emit(target.value);
   }
 }
