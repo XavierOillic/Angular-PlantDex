@@ -18,11 +18,11 @@
     },
     {
       "id": 801427,
-      "nom": "Strelitzia Nicolai : D.21-H.75",
-      "soleil": "moyen",
-      "arrosage": 2,
+      "nom": "Strelitzia Nicolai",
+      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801427_001.jpg",
       "categorie": "plantes fleuries",
-      "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0801000/801427_001.jpg"
+      "soleil": "moyen",
+      "arrosage": 2
     },
     {
       "id": 910744,
@@ -1015,6 +1015,14 @@
       "arrosage": 2,
       "categorie": "palmiers d'intérieur",
       "image": "https://images.truffaut.com/media/catalog/product/cdn:///Articles/jpg/0910000/910673_001.jpg"
+    },
+    {
+      "id": "123",
+      "nom": "B",
+      "image": "\"B\"",
+      "categorie": "B",
+      "soleil": "B",
+      "arrosage": "3"
     }
   ]
 }

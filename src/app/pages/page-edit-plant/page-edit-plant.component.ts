@@ -21,16 +21,15 @@ export class PageEditPlantComponent implements OnInit {
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     //console.log('Je suis dans PAGE EDIT : ', routeParams);
-    const currentPlantId: number = Number(routeParams.get('plantIdDetails'));
+    const currentPlantId: number = Number(routeParams.get('updateId'));
     console.log('Je suis dans PAGE EDIT CurrentPlantId : ', currentPlantId);
 
-    this.plantsService.getLaPlantDetails(currentPlantId).subscribe({
-      next: (respUnePlante) => {
-        console.log('Les données de plante sont chargées. ', respUnePlante);
+    this.plantsService
+      .getLaPlantDetails(currentPlantId)
+      .subscribe((respUnePlante) => {
+        console.log('Données de plante chargées. PAGE-EDIT', respUnePlante.id);
         this.plantEditToDisplay = respUnePlante;
-      },
-      error: () => {},
-    });
+      });
   }
 
   plantToEditSubmitted(plant: Plant) {
@@ -44,3 +43,13 @@ export class PageEditPlantComponent implements OnInit {
       });
   }
 }
+
+/*
+this.plantsService.getLaPlantDetails(currentPlantId).subscribe({
+      next: (respUnePlante) => {
+        console.log('Les données de plante sont chargées. ', respUnePlante);
+        this.plantEditToDisplay = respUnePlante;
+      },
+      error: () => {},
+    });
+*/

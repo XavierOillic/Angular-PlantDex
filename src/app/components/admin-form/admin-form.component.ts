@@ -18,9 +18,9 @@ export class AdminFormComponent implements OnInit {
   @Input() plantGotAndEdited!: Plant;
 
   @Output() submitFormPlantEnvoi = new EventEmitter<Plant>();
+  // LA BOUCHE enfant pour envoyer qqch au parent. ET j'envoie grâce  au SUBMITFORMPLANT
 
   titre: string = '';
-  // LA BOUCHE enfant pour envoyer qqch au parent. ET j'envoie grâce  au SUBMITFORMPLANT
 
   ngOnInit(): void {
     this.initFormBanane();

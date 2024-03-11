@@ -48,11 +48,7 @@
       </td>
 
       <td class="col-img">
-        <img
-          class="size"
-          src="{{ plantData.image }}"
-          alt="Image : {{ plantData.nom }} "
-        />
+        <img class="size" [src]="plantData.image" [alt]="plantData.nom" />
       </td>
       <td>{{ plantData.categorie }}</td>
       <td>{{ plantData.soleil }}</td>

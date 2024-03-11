@@ -1,7 +1,9 @@
 <!--CETTE PAGE NE FAIT --Q U E-- DE L'AFFICHAGE-->
 <div>
   <div class="d-flex justify-content-around">
+    <!-- Je teste d'abord la variable pour vérifier qu'elle n'est pas ide avant de l'affcher.-->
     <app-admin-form
+      *ngIf="plantEditToDisplay !== undefined"
       [plantGotAndEdited]="plantEditToDisplay"
       (submitFormPlantEnvoi)="plantToEditSubmitted($event)"
     >

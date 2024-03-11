@@ -17,11 +17,11 @@ const routes: Routes = [
   { path: 'admin', component: PageAdminComponent },
   { path: 'admin/new-plant', component: PageNewPlantComponent },
   {
-    path: 'plants/details/:plantIdDetails',
+    path: 'plants/details/:detailsId',
     component: PagePlantDetailsComponent,
   },
   {
-    path: 'admin/edit-plant/:plantIdEdit',
+    path: 'admin/edit-plant/:updateId',
     component: PageEditPlantComponent,
   },
   // Les deux points avant plantIdNb rend cet id dynamique // cet "ID" peut etre BANANE mais il est juste un transport d'une valeur dynamique

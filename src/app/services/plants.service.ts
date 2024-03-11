@@ -16,8 +16,8 @@ export class PlantsService {
     return this.http.get<Plant[]>('http://localhost:3000/plants'); // NOUS PERMET GRACE à ce "FETCH" de récuperer le flux de donnée PLAntes
   }
   // Je GET l'ID d'une plante : DETAILS
-  getLaPlantDetails(plantIdDetails: number): Observable<Plant> {
-    const urlDetails = `http://localhost:3000/plants/${plantIdDetails}`;
+  getLaPlantDetails(idDetails: number): Observable<Plant> {
+    const urlDetails = `http://localhost:3000/plants/${idDetails}`;
     return this.http.get<Plant>(urlDetails);
   }
   // Je GET Une plante : CREATE
@@ -25,8 +25,8 @@ export class PlantsService {
     return this.http.post<Plant>('http://localhost:3000/plants', plantToCreate);
   }
   // Je GET l'ID d'une plante : DELETE
-  deletePlant(id: number): Observable<Plant> {
-    const url = `http://localhost:3000/plants/${id}`; // Je met l'ID en mode dynamique pour qu'il change à chaque PLante.
+  deletePlant(idDelete: number): Observable<Plant> {
+    const url = `http://localhost:3000/plants/${idDelete}`; // Je met l'ID en mode dynamique pour qu'il change à chaque PLante.
     return this.http.delete<Plant>(url); // La const URL me permet de stocker l'adresse et l'id Dynamique.
   }
   // Je GET l'ID d'une plante, pour la modifier, et je variabilise son adresse
@@ -34,12 +34,9 @@ export class PlantsService {
     const urlEdit = `http://localhost:3000/plants/${plantIdEdit.id}`;
     return this.http.put<Plant>(urlEdit, plantIdEdit);
   }
-  modifyPlantService(
-    plantIdEdit: number,
-    plantPlant: Plant
-  ): Observable<Plant> {
+  modifyPlantService(idUpdate: number, plantPlant: Plant): Observable<Plant> {
     return this.http.put<Plant>(
-      `http://localhost:3000/plants/${plantIdEdit}`,
+      `http://localhost:3000/plants/${idUpdate}`,
       plantPlant
     );
   }
