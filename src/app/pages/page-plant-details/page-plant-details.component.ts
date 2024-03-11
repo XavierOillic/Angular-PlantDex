@@ -18,7 +18,7 @@ export class PagePlantDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
-    console.log('Affichage dans plant details : ', routeParams);
+    //console.log('Affichage dans plant details : ', routeParams);
     const plantIdFromRoute = Number(routeParams.get('plantIdDetails'));
     // ce qui est entre les parentheses est convertit en NUMBER, pour matcher avec l'id
     console.log('Affichage dans plant details : ', plantIdFromRoute);

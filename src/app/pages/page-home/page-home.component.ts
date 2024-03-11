@@ -155,30 +155,5 @@ export class PageHomeComponent implements OnInit {
     }
     return rdmColor;
   }
-  resetAllColors(colorReseted: string) {
-    if (
-      this.colorBody(this.color) !== "'#FFFFFF'" &&
-      this.colorText() !== "'#FFFFFF'"
-    ) {
-      colorReseted == 'white';
-    } else if (
-      this.colorBody(this.color) !== "'#000000'" &&
-      this.colorText() !== "'#000000'"
-    ) {
-      colorReseted === 'black';
-    }
-  }
+  resetAllColors(colorReseted: string) {}
 }
-
-/*
-
-changeColor(cBody: any) {
-    document.body.style.backgroundColor = cBody;
-  }
-//return (document.body.style.backgroundColor = '#' + this.color);
-
-(document.body.style.backgroundColor = '#' + rdmColor);
-Math.floor(Math.random() * 16).toString();
-    
-
-  */

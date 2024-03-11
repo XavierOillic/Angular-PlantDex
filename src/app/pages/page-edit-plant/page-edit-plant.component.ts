@@ -16,17 +16,18 @@ export class PageEditPlantComponent implements OnInit {
   ) {}
 
   plantEditToDisplay!: Plant;
+  plantId!: number;
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     //console.log('Je suis dans PAGE EDIT : ', routeParams);
-    const currentPlantId = Number(routeParams.get('plantIdDetails'));
+    const currentPlantId: number = Number(routeParams.get('plantIdDetails'));
     console.log('Je suis dans PAGE EDIT CurrentPlantId : ', currentPlantId);
 
     this.plantsService.getLaPlantDetails(currentPlantId).subscribe({
       next: (respUnePlante) => {
+        console.log('Les données de plante sont chargées. ', respUnePlante);
         this.plantEditToDisplay = respUnePlante;
-        console.log('Page edit(respUnePlante) ', this.plantEditToDisplay);
       },
       error: () => {},
     });
@@ -37,7 +38,7 @@ export class PageEditPlantComponent implements OnInit {
       .modifyPlantService(plant.id, plant)
       .subscribe((respEdition) => {
         //Le subscribe me fait attendre la réponse du server
-        console.log('La Plante a été modifiée.', respEdition);
+        console.log('La Plante a été modifiée pour Edit.', respEdition);
         this.router.navigate(['/admin']);
         // une fois que j'ai la réponse, je navigue vers la page admin.
       });
