@@ -13,30 +13,33 @@ export class PlantsService {
   @Output() stockPlant!: Plant[];
   // Je GET le tableau complet.
   getLaPlants(): Observable<Plant[]> {
-    return this.http.get<Plant[]>('http://localhost:3000/plants'); // NOUS PERMET GRACE à ce "FETCH" de récuperer le flux de donnée PLAntes
+    return this.http.get<Plant[]>('http://localhost:8081/controller/plante'); // NOUS PERMET GRACE à ce "FETCH" de récuperer le flux de donnée PLAntes
   }
   // Je GET l'ID d'une plante : DETAILS
   getLaPlantDetails(idDetails: number): Observable<Plant> {
-    const urlDetails = `http://localhost:3000/plants/${idDetails}`;
+    const urlDetails = `http://localhost:8081/controller/plante/${idDetails}`;
     return this.http.get<Plant>(urlDetails);
   }
   // Je GET Une plante : CREATE
   createNewPlant(plantToCreate: Plant): Observable<Plant> {
-    return this.http.post<Plant>('http://localhost:3000/plants', plantToCreate);
+    return this.http.post<Plant>(
+      'http://localhost:8081/controller/plante',
+      plantToCreate
+    );
   }
   // Je GET l'ID d'une plante : DELETE
   deletePlant(idDelete: number): Observable<Plant> {
-    const url = `http://localhost:3000/plants/${idDelete}`; // Je met l'ID en mode dynamique pour qu'il change à chaque PLante.
+    const url = `http://localhost:8081/controller/plante/${idDelete}`; // Je met l'ID en mode dynamique pour qu'il change à chaque PLante.
     return this.http.delete<Plant>(url); // La const URL me permet de stocker l'adresse et l'id Dynamique.
   }
   // Je GET l'ID d'une plante, pour la modifier, et je variabilise son adresse
   editPlant(plantIdEdit: Plant): Observable<Plant> {
-    const urlEdit = `http://localhost:3000/plants/${plantIdEdit.id}`;
+    const urlEdit = `http://localhost:8081/controller/plante/${plantIdEdit.id}`;
     return this.http.put<Plant>(urlEdit, plantIdEdit);
   }
   modifyPlantService(idUpdate: number, plantPlant: Plant): Observable<Plant> {
     return this.http.put<Plant>(
-      `http://localhost:3000/plants/${idUpdate}`,
+      `http://localhost:8081/controller/plante/${idUpdate}`,
       plantPlant
     );
   }

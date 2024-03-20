@@ -155,5 +155,9 @@ export class PageHomeComponent implements OnInit {
     }
     return rdmColor;
   }
-  resetAllColors(colorReseted: string) {}
+  resetAllColors(colorReseted: string) {
+    if (this.color + this.letters !== '#FFFFFF') {
+      colorReseted === '#FFFFFF';
+    }
+  }
 }

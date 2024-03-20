@@ -2,6 +2,9 @@
   background-color: rgb(241, 246, 235);
   padding: 5%;
 }
+.titre-btn-design {
+  display: flex;
+}
 .title-design {
   margin-top: 5%;
   margin-bottom: 5%;

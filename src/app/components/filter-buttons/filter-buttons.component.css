@@ -20,3 +20,8 @@ button {
   border: solid 1px rgb(215, 213, 213);
   margin: 2%;
 }
+input {
+  height: 1.2rem;
+  width: 1.2rem;
+  border: 0px;
+}

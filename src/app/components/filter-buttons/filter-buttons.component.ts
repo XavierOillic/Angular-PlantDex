@@ -33,4 +33,11 @@ export class FilterButtonsComponent {
     this.sunny_btn.emit(target.value);
     //console.log('Enfant => ', sunshine);
   }
+
+  @Output() sendColorTest = new EventEmitter();
+  colorChoice(choiceColor: Event) {
+    const target = choiceColor.target as HTMLInputElement;
+    console.log('ici navbar :', choiceColor);
+    this.sendColorTest.emit(choiceColor);
+  }
 }

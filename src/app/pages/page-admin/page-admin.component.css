@@ -8,6 +8,9 @@
   margin-top: 20px;
   margin-bottom: 2%;
 }
+.design-btn-ht {
+  display: flex;
+}
 
 td {
   background-color: rgb(241, 242, 241);
