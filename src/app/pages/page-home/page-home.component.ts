@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, OnInit, Output } from '@angular/core';
 import { Plant } from 'src/app/models/plant';
 import { PlantsService } from 'src/app/services/plants.service';
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
@@ -10,7 +10,7 @@ import { isEmpty } from 'rxjs';
   templateUrl: './page-home.component.html',
   styleUrls: ['./page-home.component.css'],
 })
-export class PageHomeComponent implements OnInit {
+export class PageHomeComponent implements OnInit, AfterViewInit {
   plantsToDisplay: Plant[] = []; // On initialise le tableau avec un tableau vide.
   plantTampon: Plant[] = [];
 
@@ -30,6 +30,7 @@ export class PageHomeComponent implements OnInit {
 
   // Ce PLantsService, UN SERVICE, peut être mis en place dans n'importe quel CONSTRUCTOR  Component TS si j'en ai besoin.
   constructor(private plantsService: PlantsService) {}
+  ngAfterViewInit(): void {}
 
   transmitSearch(receivedSearchPlant: any) {
     let searchPlant: string = receivedSearchPlant;
@@ -139,7 +140,7 @@ export class PageHomeComponent implements OnInit {
   iconNameTest: string = '';
 
   color = '#';
-  letters = '0123456789ABCDEF';
+  letters = '123456789ABCDEF';
 
   colorText() {
     console.log('Page-Home, colorText !');
@@ -155,9 +156,11 @@ export class PageHomeComponent implements OnInit {
     }
     return rdmColor;
   }
-  resetAllColors(colorReseted: string) {
-    if (this.color + this.letters !== '#FFFFFF') {
-      colorReseted === '#FFFFFF';
+  originColor: string = 'white';
+  originColorLetters: string = 'grey';
+  resetAllColors() {
+    if (this.color !== '#FFFFFF') {
+      this.color = this.originColor;
     }
   }
 }

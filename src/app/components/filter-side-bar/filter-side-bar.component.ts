@@ -61,8 +61,8 @@ export class FilterSideBarComponent {
     //console.log('Dans la NavBar : ', discoColorMode);
     this.sendColorBody.emit(target.value);
   }
-  resetColor(resetingColor: Event) {
-    const target = resetingColor.target as HTMLButtonElement;
-    this.sendReset.emit(target.value);
+
+  resetColor() {
+    this.sendReset.emit();
   }
 }

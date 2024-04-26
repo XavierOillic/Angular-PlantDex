@@ -22,6 +22,7 @@ import { PageEditPlantComponent } from './pages/page-edit-plant/page-edit-plant.
 import { ReactiveFormsModule } from '@angular/forms';
 /*import { AdminUpdateComponent } from './components/admin-update/admin-update.component';*/
 import { PagePlantDetailsComponent } from './pages/page-plant-details/page-plant-details.component';
+import { ForbiddenComponent } from './components/forbidden/forbidden.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { PagePlantDetailsComponent } from './pages/page-plant-details/page-plant
     PageEditPlantComponent,
     /*AdminUpdateComponent,*/
     PagePlantDetailsComponent,
+    ForbiddenComponent,
   ],
   imports: [
     BrowserModule,
