@@ -14,4 +14,11 @@ export class SearchBarComponent {
 
     //console.log('ENFANT TS', framboiseEventDepuisHtml.target.value);
   }
+
+  @Output() envoiDuClick = new EventEmitter();
+
+  openChoiceModal(btnModal: MouseEvent) {
+    console.log('Affichage du btn: ', btnModal);
+    this.envoiDuClick.emit(btnModal);
+  }
 }

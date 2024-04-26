@@ -15,6 +15,7 @@ export class IconesComponent {
     | 'sun-fill'
     | 'droplet'
     | 'pencil'
+    | 'x-circle'
     | 'droplet-fill' = 'heart';
 
   @Input() iconColor = 'yellow';

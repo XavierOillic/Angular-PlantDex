@@ -23,6 +23,7 @@
       <div>
         <div>
           <app-search-bar
+            (envoiDuClick)="openingModal()"
             (myrtilleVersParent)="filterPlantsByText($event)"
             class="searchDesign"
           ></app-search-bar>
@@ -43,12 +44,48 @@
             *ngFor="let plantData of plantsToDisplay"
             [plant]="plantData"
           ></app-card-plant>
-
-          <!-- Je Boucle FOR sur le TABTAMPON pour ne pas toucher au tableau originel
-        --></div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
+<dialog class="role" [style.background-color]="'grey'">
+  <div class="design-Modal">
+    <form [formGroup]="formRole" (ngSubmit)="submitFormRole()">
+      <div>
+        <div>
+          <label>Choisissez votre rôle : </label>
 
+          <select formControlName="roleToChoose">
+            <option [ngValue]="null" disabled>Choisissez...</option>
+            <option
+              type="text"
+              *ngFor="let r of roleVals() | keyvalue"
+              [ngValue]="r.key"
+            >
+              {{ r.key }} - {{ r.value }}
+            </option>
+          </select>
+
+          <span class="bouton"
+            ><button id="confirm" type="submit">
+              Valider et enregistrer dans le LS
+            </button></span
+          >
+        </div>
+      </div>
+      <div>
+        <div class="close">
+          <button id="modal-close-button" type="button" (click)="closeModal()">
+            <app-icones
+              [iconName]="'x-circle'"
+              [iconColor]="'white'"
+              [iconSize]="2"
+            ></app-icones>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</dialog>

@@ -4,6 +4,8 @@ import { PlantsService } from 'src/app/services/plants.service';
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 import { __values } from 'tslib';
 import { isEmpty } from 'rxjs';
+import { Role } from 'src/app/enum/role.enum';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-page-home',
@@ -28,9 +30,59 @@ export class PageHomeComponent implements OnInit, AfterViewInit {
   filtrCheckBox: string[] = [];
   filtrText: string = '';
 
+  dialog!: any;
+  formRole!: FormGroup;
+
   // Ce PLantsService, UN SERVICE, peut être mis en place dans n'importe quel CONSTRUCTOR  Component TS si j'en ai besoin.
   constructor(private plantsService: PlantsService) {}
-  ngAfterViewInit(): void {}
+
+  //====================================================================================
+  //======================   MODAL CHOIX ROLE   =========================================
+  role = Role;
+  roleChoisi: string = '';
+
+  // returns keys of enum
+  roleKeys(): Array<string> {
+    const rKeys = Object.keys(this.role);
+    return rKeys;
+  }
+
+  // returns values of enum
+  roleVals(): Array<string> {
+    const keys = Object.keys(this.role);
+    return keys.map((r) => Object(this.role)[r]);
+  }
+
+  ngAfterViewInit(): void {
+    this.dialog = document.querySelector('dialog');
+  }
+
+  openingModal() {
+    this.dialog!.showModal();
+  }
+  initFormRole() {
+    this.formRole = new FormGroup({
+      roleToChoose: new FormControl(''),
+    });
+  }
+  submitFormRole(): void {
+    console.log('Affichage du role choisi : ', this.formRole.value);
+    this.dialog!.close();
+    this.roleChoisi = this.formRole.value.roleToChoose;
+  }
+
+  closeModal() {
+    this.dialog.close();
+  }
+
+  //====================================================================================
+  /*
+  validAndClose(valueRole: Event) {
+    const target = valueRole.target as HTMLButtonElement;
+    console.log('Affichage du role choisi : ', target.value);
+  }
+  */
+  //======================   MODAL CHOIX ROLE   =========================================
 
   transmitSearch(receivedSearchPlant: any) {
     let searchPlant: string = receivedSearchPlant;
@@ -50,6 +102,8 @@ export class PageHomeComponent implements OnInit, AfterViewInit {
   */
 
   ngOnInit(): void {
+    this.initFormRole();
+
     this.plantsService.getLaPlants().subscribe((dataPLantJeChoisi) => {
       console.log(dataPLantJeChoisi); // Je stocke dans ce dataPlant les données de la BDD simulée.
       // LE SUBSCRIBE remplace le THEN ! et la partie avant le FETCH.

@@ -7,3 +7,8 @@ NE PAS METTRE !IMPORTANT */
 .navbar-nav .nav-link.active {
   color: green;
 }
+
+#navbar-Ul {
+  align-items: center;
+}
+
