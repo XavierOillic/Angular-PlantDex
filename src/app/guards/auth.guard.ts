@@ -8,6 +8,7 @@ import {
   UrlTree,
 } from '@angular/router';
 import { Observable } from 'rxjs';
+import { RoleService } from '../services/role.service';
 
 Injectable({
   providedIn: 'root',
@@ -21,6 +22,7 @@ export const AuthGuard: CanActivateFn = (
   | boolean
   | UrlTree => {
   const router: Router = inject(Router);
+  const roleServ: RoleService = inject(RoleService);
   // hardcoded user data.
 
   const loggedInAdmin = {
@@ -29,7 +31,9 @@ export const AuthGuard: CanActivateFn = (
     role: 'user',
   };
 
-  if (route.data['roles'].includes(loggedInAdmin.role)) {
+  let roleChoisi = roleServ.getRoleFromLs();
+
+  if (route.data['role'].includes(loggedInAdmin.role)) {
     return true;
   }
   console.log('YOU SHALL NOT PASS !');

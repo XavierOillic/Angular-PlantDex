@@ -6,6 +6,7 @@ import { __values } from 'tslib';
 import { isEmpty } from 'rxjs';
 import { Role } from 'src/app/enum/role.enum';
 import { FormControl, FormGroup } from '@angular/forms';
+import { RoleService } from 'src/app/services/role.service';
 
 @Component({
   selector: 'app-page-home',
@@ -34,7 +35,10 @@ export class PageHomeComponent implements OnInit, AfterViewInit {
   formRole!: FormGroup;
 
   // Ce PLantsService, UN SERVICE, peut être mis en place dans n'importe quel CONSTRUCTOR  Component TS si j'en ai besoin.
-  constructor(private plantsService: PlantsService) {}
+  constructor(
+    private plantsService: PlantsService,
+    private roleServ: RoleService
+  ) {}
 
   //====================================================================================
   //======================   MODAL CHOIX ROLE   =========================================
@@ -65,10 +69,12 @@ export class PageHomeComponent implements OnInit, AfterViewInit {
       roleToChoose: new FormControl(''),
     });
   }
-  submitFormRole(): void {
+  submitFormRole(value: string) {
     console.log('Affichage du role choisi : ', this.formRole.value);
-    this.dialog!.close();
     this.roleChoisi = this.formRole.value.roleToChoose;
+    //localStorage.setItem('myRole', this.roleChoisi);
+    this.roleServ.setRoleInLs('myRole', this.roleChoisi);
+    this.dialog!.close();
   }
 
   closeModal() {
@@ -76,12 +82,6 @@ export class PageHomeComponent implements OnInit, AfterViewInit {
   }
 
   //====================================================================================
-  /*
-  validAndClose(valueRole: Event) {
-    const target = valueRole.target as HTMLButtonElement;
-    console.log('Affichage du role choisi : ', target.value);
-  }
-  */
   //======================   MODAL CHOIX ROLE   =========================================
 
   transmitSearch(receivedSearchPlant: any) {
@@ -197,13 +197,11 @@ export class PageHomeComponent implements OnInit, AfterViewInit {
   letters = '123456789ABCDEF';
 
   colorText() {
-    console.log('Page-Home, colorText !');
     this.color = Math.floor(0x1000000 * Math.random()).toString(16);
     return '#' + ('000000' + this.color).slice(-6);
   }
 
   colorBody(rdmColor: any) {
-    console.log('Page-Home, colorBody !');
     this.color = '#';
     for (var i = 0; i < 6; i++) {
       this.color += this.letters[Math.floor(Math.random() * 16)];
@@ -211,7 +209,6 @@ export class PageHomeComponent implements OnInit, AfterViewInit {
     return rdmColor;
   }
   originColor: string = 'white';
-  originColorLetters: string = 'grey';
   resetAllColors() {
     if (this.color !== '#FFFFFF') {
       this.color = this.originColor;

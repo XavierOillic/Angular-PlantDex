@@ -1,5 +1,5 @@
-<div [ngStyle]="{ backgroundColor: colorBody(color) }">
-  <div [ngStyle]="{ color: colorText() }">
+<div [ngStyle]="{ backgroundColor: colorBody(color), color: colorText() }">
+  <div>
     <div class="d-flex">
       <!--
     <button [title]="monTitle" (click)="displayDiv()">
@@ -52,7 +52,7 @@
 
 <dialog class="role" [style.background-color]="'grey'">
   <div class="design-Modal">
-    <form [formGroup]="formRole" (ngSubmit)="submitFormRole()">
+    <form [formGroup]="formRole" (ngSubmit)="submitFormRole(roleChoisi)">
       <div>
         <div>
           <label>Choisissez votre rôle : </label>
@@ -60,16 +60,17 @@
           <select formControlName="roleToChoose">
             <option [ngValue]="null" disabled>Choisissez...</option>
             <option
+              #roleSelected
               type="text"
               *ngFor="let r of roleVals() | keyvalue"
-              [ngValue]="r.key"
+              [ngValue]="r.value"
             >
               {{ r.key }} - {{ r.value }}
             </option>
           </select>
 
           <span class="bouton"
-            ><button id="confirm" type="submit">
+            ><button id="confirm" type="submit" >
               Valider et enregistrer dans le LS
             </button></span
           >
