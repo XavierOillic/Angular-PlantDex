@@ -22,8 +22,7 @@ export class RoleService {
     const dataFromLs = localStorage.getItem('myRole');
     if (dataFromLs) {
       this.myGotRole = dataFromLs;
-    } else {
-      this.myGotRole = 'There are nos datas in the LocalStorage.';
     }
+    return this.myGotRole;
   }
 }

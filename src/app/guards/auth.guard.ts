@@ -13,6 +13,7 @@ import { RoleService } from '../services/role.service';
 Injectable({
   providedIn: 'root',
 });
+
 export const AuthGuard: CanActivateFn = (
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot
@@ -28,10 +29,10 @@ export const AuthGuard: CanActivateFn = (
   const loggedInAdmin = {
     id: '1zx-casd123-asdzxc132',
     name: 'Xavier Oillic',
-    role: 'user',
+    role: 'admin',
   };
 
-  let roleChoisi = roleServ.getRoleFromLs();
+  const roleChoisi = roleServ.getRoleFromLs();
 
   if (route.data['role'].includes(loggedInAdmin.role)) {
     return true;
