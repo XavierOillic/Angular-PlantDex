@@ -84,8 +84,6 @@ export class PageHomeComponent implements OnInit, AfterViewInit {
   //====================================================================================
   //======================   GET TOKEN to LOCAL STORAGE   ==============================
 
-  
-
   //====================================================================================
   //====================================================================================
 
@@ -122,10 +120,6 @@ export class PageHomeComponent implements OnInit, AfterViewInit {
   }
   // Le OnInit, stocke et affiche le contenu de la BDD dès le chargement de la page.
   // Je charge et affiche le plantTampon, ET le plantsToDisplay.
-
-  // Retourner un tableau contenant les catégories des plantes de manière unique
-  // ['plante verte', 'orchidés', 'bonsaïs']
-  // Indice : .map() / Set
 
   getCategoriesFromPlants(plants: Plant[]): string[] {
     // Je MAP le tableau de SERVICE plants pour ne récuperer que les catégorie ==> LE X.CATEGORIES
@@ -201,10 +195,10 @@ export class PageHomeComponent implements OnInit, AfterViewInit {
   color = '#';
   letters = '123456789ABCDEF';
 
-  colorText() {
+  /*colorText() {
     this.color = Math.floor(0x1000000 * Math.random()).toString(16);
     return '#' + ('000000' + this.color).slice(-6);
-  }
+  }*/
 
   colorBody(rdmColor: any) {
     this.color = '#';

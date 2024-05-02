@@ -1,4 +1,4 @@
-<div [ngStyle]="{ backgroundColor: colorBody(color), color: colorText() }">
+<div [ngStyle]="{ backgroundColor: colorBody(color) }">
   <div>
     <div class="d-flex">
       <!--
@@ -14,7 +14,6 @@
         <app-filter-side-bar
           [categoriesToDisplay]="categoriesToSend"
           (categoriesToFilter)="filterPlantsByCategories($event)"
-          (sendColorText)="colorText()"
           (sendColorBody)="colorBody(color)"
           (sendReset)="resetAllColors()"
         ></app-filter-side-bar>
