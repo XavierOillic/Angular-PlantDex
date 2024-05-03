@@ -11,6 +11,7 @@ export class TokenService {
     private tokenStorage: StoreTokenService
   ) {}
   // ===========> C'EST LE GET QUI RÉCUPÈRE DEPUIS KEYCLOAK
+  /*
   getTokenfromKC(
     url: string,
     client_id: string,
@@ -32,7 +33,7 @@ export class TokenService {
     };
     return this.http.post(url, urlencoded, httpOptions);
   }
-
+*/
   // ===========> C'EST LE GET QUI RÉCUPÈRE dans le LOCALSTORAGE et APPELE LE BACK.
   urlBack: string = 'http://localhost:8081/controller/admin';
   myGotToken!: { access_token: String };

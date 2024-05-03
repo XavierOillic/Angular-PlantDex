@@ -61,10 +61,10 @@
             <option
               #roleSelected
               type="text"
-              *ngFor="let r of roleVals() | keyvalue"
+              *ngFor="let r of role | keyvalue; index as i"
               [ngValue]="r.value"
             >
-              {{ r.key }} - {{ r.value }}
+              {{ i }} - {{ r.value }}
             </option>
           </select>
 

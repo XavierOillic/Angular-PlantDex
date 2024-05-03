@@ -34,7 +34,10 @@ export const AuthGuard: CanActivateFn = (
 
   const roleChoisi = roleServ.getRoleFromLs();
 
-  if (route.data['role'].includes(loggedInAdmin.role)) {
+  console.log('Affichage de mes role : ', roleChoisi);
+  console.log('Affichage de la route.data :', route.data['role']);
+
+  if (route.data['role'].includes(roleChoisi)) {
     return true;
   }
   console.log('YOU SHALL NOT PASS !');
