@@ -8,16 +8,13 @@ import { AccessToken } from '../models/accesToken';
 export class StoreTokenService {
   constructor(private http: HttpClient) {}
 
-  a!: string;
-  b!: string;
-
-  setTokeninLocalStorage(a: string, b: string) {
-    localStorage.setItem(a, b);
+  setTokenInLocalStorage(key: string, value: object) {
+    localStorage.setItem(key, JSON.stringify(value));
   }
 
-  myGotTokenAccess!: AccessToken;
+  myGotTokenAccess!: { access_token: string };
   getTokenFromLs() {
-    const tokenFromLs = localStorage.getItem('');
+    const tokenFromLs = localStorage.getItem('myToken');
     if (tokenFromLs) {
       this.myGotTokenAccess = JSON.parse(tokenFromLs);
     }

@@ -16,21 +16,21 @@ const routes: Routes = [
     path: '',
     component: PageHomeComponent,
     canActivate: [AuthGuard],
-    data: { role: ['user', 'admin'] },
+    data: { role: ['user', 'admin', 'registereduser'] },
   },
   // Set Route for http://localhost:4200/my-plants ==> pâge my-plants
   {
     path: 'my-plants',
     component: PageMyPlantsComponent,
     canActivate: [AuthGuard],
-    data: { role: ['user', 'admin'] },
+    data: { role: ['admin', 'registereduser'] },
   },
   // Set Route for http://localhost:4200/admin ==> pâge my-plants
   {
     path: 'admin',
     component: PageAdminComponent,
     canActivate: [AuthGuard],
-    data: { role: ['admin'] },
+    data: { role: ['admin', 'registereduser'] },
   },
   {
     path: 'admin/new-plant',
@@ -42,7 +42,7 @@ const routes: Routes = [
     path: 'plants/details/:detailsId',
     component: PagePlantDetailsComponent,
     canActivate: [AuthGuard],
-    data: { role: ['user', 'admin'] },
+    data: { role: ['user', 'admin', 'registereduser'] },
   },
   {
     path: 'admin/edit-plant/:updateId',

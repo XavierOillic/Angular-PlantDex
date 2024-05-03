@@ -7,6 +7,8 @@ import { isEmpty } from 'rxjs';
 import { Role } from 'src/app/enum/role.enum';
 import { FormControl, FormGroup } from '@angular/forms';
 import { RoleService } from 'src/app/services/role.service';
+import { TokenService } from 'src/app/services/token.service';
+import { StoreTokenService } from 'src/app/services/store-token.service';
 
 @Component({
   selector: 'app-page-home',
@@ -37,7 +39,9 @@ export class PageHomeComponent implements OnInit, AfterViewInit {
   // Ce PLantsService, UN SERVICE, peut être mis en place dans n'importe quel CONSTRUCTOR  Component TS si j'en ai besoin.
   constructor(
     private plantsService: PlantsService,
-    private roleServ: RoleService
+    private roleServ: RoleService,
+    private tokenGet: TokenService,
+    private storeToken: StoreTokenService
   ) {}
 
   //====================================================================================
@@ -74,11 +78,19 @@ export class PageHomeComponent implements OnInit, AfterViewInit {
     this.roleChoisi = this.formRole.value.roleToChoose;
     //localStorage.setItem('myRole', this.roleChoisi);
     this.roleServ.setRoleInLs('myRole', this.roleChoisi);
+    this.getAndStoreToken(this.roleChoisi);
     this.dialog!.close();
   }
 
   closeModal() {
     this.dialog.close();
+  }
+
+  getAndStoreToken(userChoosen: string) {
+    console.log('affichage de userchoisi :', userChoosen);
+    this.tokenGet.getTokenfromKC(userChoosen).subscribe((data) => {
+      this.storeToken.setTokenInLocalStorage('myToken', data);
+    });
   }
 
   //====================================================================================

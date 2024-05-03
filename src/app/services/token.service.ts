@@ -11,20 +11,16 @@ export class TokenService {
     private tokenStorage: StoreTokenService
   ) {}
   // ===========> C'EST LE GET QUI RÉCUPÈRE DEPUIS KEYCLOAK
-  /*
-  getTokenfromKC(
-    url: string,
-    client_id: string,
-    client_secret: string,
-    username: string,
-    password: string
-  ) {
+
+  getTokenfromKC(username: string) {
+    const url =
+      'http://localhost:9090/realms/cda/protocol/openid-connect/token';
     const urlencoded = new URLSearchParams({
       grant_type: 'password',
-      client_id: client_id,
-      client_secret: client_secret,
+      client_id: 'cda',
+      client_secret: '4vYYs2ONM4q9rwdSEityWZaIUdqY3SHd',
       username: username,
-      password: password,
+      password: 'password',
     });
     const httpOptions = {
       headers: new HttpHeaders({
@@ -33,7 +29,7 @@ export class TokenService {
     };
     return this.http.post(url, urlencoded, httpOptions);
   }
-*/
+
   // ===========> C'EST LE GET QUI RÉCUPÈRE dans le LOCALSTORAGE et APPELE LE BACK.
   urlBack: string = 'http://localhost:8081/controller/admin';
   myGotToken!: { access_token: String };
