@@ -96,9 +96,6 @@ export class PageHomeComponent implements OnInit, AfterViewInit {
   //====================================================================================
   //======================   GET TOKEN to LOCAL STORAGE   ==============================
 
-  //====================================================================================
-  //====================================================================================
-
   transmitSearch(receivedSearchPlant: any) {
     let searchPlant: string = receivedSearchPlant;
 
@@ -107,14 +104,7 @@ export class PageHomeComponent implements OnInit, AfterViewInit {
     );
   }
   //je met en place un tableau tampon pour ne pas toucher à mon tab originel et pour pouvoir toujours afficher un tableau complet.
-  //Dans le HTML, il me faux aussi modifier le NGFOR, pour qu'il boucle à chaque recherche dans tout la tabTAMPON.
-
-  /*
-  isDivDisplayed = false;
-  displayDiv() {
-    this.isDivDisplayed = !this.isDivDisplayed; // faire apparaitre et disparaitre la div noire sous le bandeau de nav
-  }
-  */
+  //Dans le HTML, il me faux aussi modifier le NGFOR, pour qu'il boucle à chaque recherche dans tout la tabTAMPON
 
   ngOnInit(): void {
     this.initFormRole();

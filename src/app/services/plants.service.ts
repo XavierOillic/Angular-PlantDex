@@ -16,7 +16,7 @@ export class PlantsService {
     private storeToken: StoreTokenService
   ) {}
 
-  @Output() stockPlant!: Plant[];
+  //@Output() stockPlant!: Plant[];
   // Je GET le tableau complet.
   getLaPlants(): Observable<Plant[]> {
     return this.http.get<Plant[]>('http://localhost:8081/controller/plante'); // NOUS PERMET GRACE à ce "FETCH" de récuperer le flux de donnée PLAntes

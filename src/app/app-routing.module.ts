@@ -15,8 +15,8 @@ const routes: Routes = [
   {
     path: '',
     component: PageHomeComponent,
-    canActivate: [AuthGuard],
-    data: { role: ['user', 'admin', 'registereduser'] },
+    //canActivate: [AuthGuard],
+    //data: { role: [] },
   },
   // Set Route for http://localhost:4200/my-plants ==> pâge my-plants
   {
